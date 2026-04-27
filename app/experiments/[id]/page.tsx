@@ -25,16 +25,16 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
 
   const experiment = experiments[0];
   const labBlack = experiment.colorways[0];
-  const price = `${experiment.price}`;
+  const price = "$" + experiment.price;
   const specRows = [
     ["PROTOCOL", experiment.specs.protocol],
     ["FABRIC", experiment.specs.fabric],
     ["FIT", experiment.specs.fit],
     ["PANELS", String(experiment.specs.panels)],
     ["PIPING", experiment.specs.piping],
+    ["WEIGHT", experiment.specs.weight],
     ["CARE", experiment.specs.care],
     ["ORIGIN", experiment.specs.origin],
-    ["WEIGHT", experiment.specs.weight],
     ["PRICE", price],
   ] as const;
 
