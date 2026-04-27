@@ -1,3 +1,9 @@
+// TODO: This is the v1 inline-SVG logo. Replace with the official logo
+// asset when the brand asset is finalized. To swap:
+//   1. Add the logo file to /public/images/ (SVG preferred, PNG @2x ok)
+//   2. Replace the SVG markup below with <Image> from next/image
+//   3. Keep the variant prop API intact ('full' | 'icon-only')
+
 import { cn } from "@/lib/cn";
 
 type LogoProps = {
