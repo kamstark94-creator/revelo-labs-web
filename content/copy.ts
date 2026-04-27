@@ -51,6 +51,7 @@ export const copy = {
     headline: "THE NEXT EXPERIMENT\nDROPS IN MOTION.",
     placeholder: "your@email.com",
     cta: "GET LAB ACCESS",
+    valueProps: "EARLY ACCESS / PROTOTYPE NOTES / LIMITED RELEASE WINDOWS",
     privacy: "NO SPAM. NO SALE ALERTS. LAB UPDATES ONLY.",
     success: "ON THE LIST. EXPERIMENT_002 INCOMING.",
   },

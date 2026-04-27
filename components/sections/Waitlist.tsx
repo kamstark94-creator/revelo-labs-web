@@ -34,12 +34,16 @@ export function Waitlist() {
           {copy.waitlist.headline}
         </h2>
 
+        <p className="mx-auto mt-8 font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
+          {copy.waitlist.valueProps}
+        </p>
+
         {submitted ? (
           <p className="mx-auto mt-10 max-w-[560px] border border-hairline bg-surface px-4 py-4 font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
             {copy.waitlist.success}
           </p>
         ) : (
-          <form onSubmit={handleWaitlist} className="mx-auto mt-12 flex max-w-[620px] flex-col justify-center gap-3 md:flex-row">
+          <form onSubmit={handleWaitlist} className="mx-auto mt-8 flex max-w-[620px] flex-col justify-center gap-3 md:flex-row">
             <input
               type="email"
               value={email}
