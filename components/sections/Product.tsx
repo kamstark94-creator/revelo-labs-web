@@ -43,8 +43,8 @@ export function Product() {
     <section id="spec" className="py-[64px] md:py-[120px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.product.sectionLabel} />
-        <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-x-8">
-          <div className="lg:col-span-3">
+        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_2.5fr_1.5fr] lg:gap-x-8">
+          <div>
             <MonoLabel>{copy.product.colorwaysHeading}</MonoLabel>
             <div className="mt-6 space-y-5">
               {experiment.colorways.map((colorway) => {
@@ -77,11 +77,11 @@ export function Product() {
             </div>
           </div>
 
-          <div className="lg:col-span-4 lg:col-start-5">
+          <div>
             <ProductIllustration size="product" colorway={activeColorway} imageSrc={experiment.images.hero} alt={experiment.name} />
           </div>
 
-          <div className="lg:col-span-3 lg:col-start-10">
+          <div>
             <MonoLabel>{copy.product.specHeading}</MonoLabel>
             <div className="mt-6">
               {specRows.map(([label, value]) => (
