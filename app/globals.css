@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0b;
+  --surface: #141416;
+  --surface-2: #1a1a1d;
+  --ink: #f4f2ee;
+  --body: #a8a8ac;
+  --muted: #6b6b70;
+  --hairline: #2a2a2e;
+  --brand: #39ff14;
+  --brand-dim: #1fa82a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
