@@ -3,6 +3,7 @@ export type Colorway = {
   name: string;
   hex: string;
   pipingHex: string;
+  description: string;
 };
 
 export type Experiment = {
@@ -54,24 +55,28 @@ export const experiments: Experiment[] = [
         name: "Lab Black",
         hex: "#0A0A0B",
         pipingHex: "#39FF14",
+        description: "THE FOUNDATION COLORWAY",
       },
       {
         sku: "REV-001-SBL",
         name: "Signal Blue",
         hex: "#1E5BFF",
         pipingHex: "#39FF14",
+        description: "HIGH-CONTRAST PIPING STUDY",
       },
       {
         sku: "REV-001-BNE",
         name: "Bone",
         hex: "#E8E2D5",
         pipingHex: "#39FF14",
+        description: "INVERTED LAB PALETTE",
       },
       {
         sku: "REV-001-EMB",
         name: "Ember Red",
         hex: "#C9342A",
         pipingHex: "#39FF14",
+        description: "WARM-LIGHT MATERIAL TEST",
       },
     ],
     specs: {
