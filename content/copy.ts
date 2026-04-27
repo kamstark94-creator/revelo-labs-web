@@ -8,7 +8,7 @@ export const copy = {
     cartLabel: "LAB",
   },
   hero: {
-    kicker: "EXPERIMENT_001 / LAUNCHED 04.2026 / 4 COLORWAYS",
+    kicker: "EXPERIMENT 001 / LAUNCHED 04.2026 / 4 COLORWAYS",
     headline: "ENGINEERED TO STAND OUT.",
     sub: "We don't release products. We release experiments. Experiment 001 is the first garment out of the lab — documented, iterated, and worn.",
     ctaPrimary: { label: "ENTER THE LAB", href: "/experiments/001" },
@@ -47,7 +47,7 @@ export const copy = {
     sectionLabel: "LAB NOTES / 001",
   },
   waitlist: {
-    kicker: "EXPERIMENT_002 / IN DEVELOPMENT",
+    kicker: "EXPERIMENT 002 / IN DEVELOPMENT",
     headline: "THE NEXT EXPERIMENT\nDROPS IN MOTION.",
     placeholder: "your@email.com",
     cta: "GET LAB ACCESS",
