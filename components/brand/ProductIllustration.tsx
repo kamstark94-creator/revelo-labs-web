@@ -1,3 +1,14 @@
+// TODO: This is a placeholder editorial illustration. Will be replaced
+// with real product photography. Swap path:
+//   1. Add hero shot to /public/images/exp-001-hero.jpg
+//   2. Add 4 detail shots to /public/images/exp-001-detail-{1..4}.jpg
+//   3. Update images.hero and images.details[] in
+//      content/experiments.ts with the file paths
+//   4. This component should check colorway.imageOverride first
+//      and fall back to the SVG if no image is provided
+//
+// The SVG below stays as fallback so the site never has broken images.
+
 import Image from "next/image";
 import type { Colorway } from "@/content/experiments";
 import { cn } from "@/lib/cn";
@@ -75,6 +86,9 @@ export function ProductIllustration({
         <path d="M144 62v456" stroke="#F4F2EE" strokeOpacity="0.1" />
         <path d="M206 62v456" stroke="#F4F2EE" strokeOpacity="0.08" />
         <path d="M304 236c-34 8-52 28-58 62" stroke="#F4F2EE" strokeOpacity="0.16" fill="none" />
+        <text x="106" y="496" className="font-mono fill-muted text-[10px]">
+          PLACEHOLDER
+        </text>
         <text x="270" y="496" fill="#F4F2EE" fontFamily="var(--font-mono), monospace" fontSize="13" letterSpacing="1">
           /01
         </text>
