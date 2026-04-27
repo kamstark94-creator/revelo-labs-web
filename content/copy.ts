@@ -54,6 +54,19 @@ export const copy = {
     privacy: "NO SPAM. NO SALE ALERTS. LAB UPDATES ONLY.",
     success: "ON THE LIST. EXPERIMENT_002 INCOMING.",
   },
+  about: {
+    headline: "BUILT LIKE A FIELD NOTE. WORN LIKE A SIGNAL.",
+    paragraphs: [
+      "Revelo Labs exists for the space between performance gear and public documentation. Every release starts as a question: what should a garment prove before it deserves to exist?",
+      "Experiment 001 is our first answer. It is not a seasonal drop or a logo exercise. It is a record of material choices, prototype failures, construction logic, and motion tests made visible in the finished piece.",
+      "We build athletic apparel with an editorial spine: fewer products, clearer reasons, sharper details. If a panel does not improve movement, it goes. If a color does not explain construction, it waits. The lab is the method and the method is the brand.",
+    ],
+  },
+  notFound: {
+    headline: "404 / NOT IN THE LAB",
+    caption: "This experiment doesn't exist yet.",
+    cta: "BACK TO HOME",
+  },
   footer: {
     tagline: "Engineered to stand out.",
     columns: [
