@@ -29,7 +29,7 @@ export function LabNoteCard({ note }: { note: LabNote }) {
 
 export function LabNotes() {
   return (
-    <section className="py-[64px] md:py-[160px]">
+    <section className="py-[64px] md:py-[120px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.labNotes.sectionLabel} />
         <div className="-mx-6 mt-16 flex snap-x gap-4 overflow-x-auto px-6 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
