@@ -26,13 +26,17 @@ export function Product() {
     console.log("ADD_TO_LAB", { sku: activeColorway.sku, experiment: experiment.id });
   }
 
+  const priceDisplay = `${experiment.price}`;
   const specRows = [
     ["PROTOCOL", experiment.specs.protocol],
     ["FABRIC", experiment.specs.fabric],
     ["FIT", experiment.specs.fit],
     ["PANELS", String(experiment.specs.panels)],
     ["PIPING", experiment.specs.piping],
+    ["CARE", experiment.specs.care],
+    ["ORIGIN", experiment.specs.origin],
     ["WEIGHT", experiment.specs.weight],
+    ["PRICE", priceDisplay],
   ] as const;
 
   return (

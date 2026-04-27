@@ -25,11 +25,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
 
   const experiment = experiments[0];
   const labBlack = experiment.colorways[0];
-  const price = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: experiment.currency,
-    maximumFractionDigits: 0,
-  }).format(experiment.price);
+  const price = `${experiment.price}`;
   const specRows = [
     ["PROTOCOL", experiment.specs.protocol],
     ["FABRIC", experiment.specs.fabric],
@@ -39,6 +35,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
     ["CARE", experiment.specs.care],
     ["ORIGIN", experiment.specs.origin],
     ["WEIGHT", experiment.specs.weight],
+    ["PRICE", price],
   ] as const;
 
   return (

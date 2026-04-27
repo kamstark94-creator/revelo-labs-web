@@ -36,7 +36,7 @@ export const experiments: Experiment[] = [
     name: "Experiment 001 / The Jogger",
     status: "available",
     releasedAt: "2026-04-01",
-    price: 148,
+    price: 148, // PLACEHOLDER — final pricing TBD
     currency: "USD",
     description:
       "The first garment out of the lab. Seven engineered panels, lab-green piping, 100% nylon.",
@@ -72,9 +72,9 @@ export const experiments: Experiment[] = [
       fit: "TAPERED",
       panels: 7,
       piping: "LAB-GREEN",
-      care: "COLD WASH / HANG DRY",
-      origin: "CHINA",
-      weight: "320G",
+      care: "COLD WASH / HANG DRY", // PLACEHOLDER — confirm with manufacturer
+      origin: "TBD", // PLACEHOLDER — confirm at production
+      weight: "320G", // PLACEHOLDER — measure final sample
     },
     prototypeCount: 14,
     images: { hero: null, details: [null, null, null, null] },
