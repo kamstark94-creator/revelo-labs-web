@@ -37,6 +37,14 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
     ["ORIGIN", experiment.specs.origin],
     ["PRICE", price],
   ] as const;
+  const fitRows = [
+    ["RISE", experiment.fit.rise],
+    ["INSEAM", experiment.fit.inseam],
+    ["STRETCH", experiment.fit.stretch],
+    ["MODEL HEIGHT", experiment.fit.modelHeight],
+    ["MODEL WEARS", experiment.fit.modelWears],
+    ["SIZE GUIDE", experiment.fit.sizeGuide],
+  ] as const;
 
   return (
     <>
@@ -67,6 +75,14 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
                   {specRows.map(([label, value]) => (
                     <SpecRow key={label} label={label} value={value} />
                   ))}
+                </div>
+                <div className="mt-6 border-t border-hairline pt-5">
+                  <p className="font-mono text-[12px] uppercase tracking-[0.05em] text-brand">FIT & SIZING</p>
+                  <div className="mt-3">
+                    {fitRows.map(([label, value]) => (
+                      <SpecRow key={label} label={label} value={value} />
+                    ))}
+                  </div>
                 </div>
                 <Button className="mt-8 w-full" variant="primary" size="lg">
                   {copy.product.addToLabLabel}

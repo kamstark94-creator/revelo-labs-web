@@ -25,6 +25,14 @@ export type Experiment = {
     origin: string;
     weight: string;
   };
+  fit: {
+    rise: string;
+    inseam: string;
+    stretch: string;
+    modelHeight: string;
+    modelWears: string;
+    sizeGuide: string;
+  };
   prototypeCount: number;
   images: { hero: string | null; details: (string | null)[] };
 };
@@ -75,6 +83,14 @@ export const experiments: Experiment[] = [
       care: "COLD WASH / HANG DRY", // PLACEHOLDER — confirm with manufacturer
       origin: "[PENDING]", // PLACEHOLDER — confirm at production
       weight: "320G", // PLACEHOLDER — measure final sample
+    },
+    fit: {
+      rise: "[PENDING]",
+      inseam: "[PENDING]",
+      stretch: "NONE",
+      modelHeight: "[PENDING]",
+      modelWears: "[PENDING]",
+      sizeGuide: "XS / S / M / L / XL",
     },
     prototypeCount: 14,
     images: { hero: null, details: [null, null, null, null] },
