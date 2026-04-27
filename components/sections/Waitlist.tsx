@@ -30,7 +30,7 @@ export function Waitlist() {
     <section className="py-[160px] md:py-[140px]">
       <div className="mx-auto max-w-[1280px] px-6 text-center md:px-12 lg:px-16">
         <MonoLabel accent>{copy.waitlist.kicker}</MonoLabel>
-        <h2 className="mx-auto mt-8 max-w-[980px] whitespace-pre-line font-display text-[56px] uppercase leading-[0.95] tracking-[0.02em] text-ink md:text-[72px] lg:text-[80px]">
+        <h2 className="mx-auto mt-8 max-w-[980px] whitespace-pre-line font-display text-[44px] uppercase leading-[0.95] tracking-[0.02em] text-ink md:text-[64px] lg:text-[80px]">
           {copy.waitlist.headline}
         </h2>
 
