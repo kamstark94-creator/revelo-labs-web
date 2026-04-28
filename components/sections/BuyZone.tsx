@@ -58,7 +58,7 @@ export function BuyZone() {
   const colorwaySelector = (
     <div>
       <div
-        className="flex items-center gap-[10px] md:gap-3"
+        className="relative z-20 flex items-center gap-[10px] md:gap-3"
         aria-label="Select colorway"
       >
         {experiment.colorways.map((colorway) => {
@@ -72,7 +72,7 @@ export function BuyZone() {
               aria-label={"Select " + colorway.name}
               aria-pressed={active}
               className={cn(
-                "relative h-14 w-14 shrink-0 rounded-full transition-all duration-200 md:h-12 md:w-12",
+                "relative h-14 w-14 shrink-0 cursor-pointer rounded-full transition-all duration-200 active:scale-[0.98] md:h-12 md:w-12",
                 active
                   ? "ring-2 ring-brand"
                   : "ring-1 ring-hairline hover:ring-2 hover:ring-ink",
@@ -95,7 +95,7 @@ export function BuyZone() {
 
   const activePhoto = (
     <div>
-      <div className="mt-6 flex max-h-[60vh] w-full items-center justify-center md:mt-8 md:max-h-[600px]">
+      <div className="relative z-0 mt-6 flex max-h-[60vh] w-full items-center justify-center md:mt-8 md:max-h-[600px]">
         <ProductIllustration
           colorway={activeColorway}
           size="hero"
