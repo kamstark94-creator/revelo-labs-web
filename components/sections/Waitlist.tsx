@@ -27,7 +27,7 @@ export function Waitlist() {
   }
 
   return (
-    <section id="waitlist" className="py-[160px] md:py-[140px]">
+    <section id="waitlist" className="py-[100px] md:py-[140px]">
       <div className="mx-auto max-w-[1280px] px-6 text-center md:px-12 lg:px-16">
         <div className="md:hidden">
           <MonoLabel accent>{copy.waitlist.kicker}</MonoLabel>

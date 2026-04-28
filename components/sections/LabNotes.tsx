@@ -28,7 +28,7 @@ export function LabNoteCard({ note }: { note: LabNote }) {
 
 export function LabNotes() {
   return (
-    <section id="lab-notes" className="py-[64px] md:py-[96px]">
+    <section id="lab-notes" className="py-[80px] md:py-[96px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.labNotes.sectionLabel} />
         <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">

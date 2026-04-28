@@ -93,7 +93,7 @@ export function Product() {
   );
 
   return (
-    <section id="product" className="py-[64px] md:py-[112px]">
+    <section id="product" className="py-[80px] md:py-[112px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.product.sectionLabel} />
 
