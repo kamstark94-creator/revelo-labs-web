@@ -4,6 +4,7 @@ export type Colorway = {
   hex: string;
   pipingHex: string;
   description: string;
+  image?: string;
 };
 
 export type Experiment = {
@@ -50,6 +51,14 @@ export const experiments: Experiment[] = [
     description:
       "The first garment out of the lab. Seven engineered panels, lab-green piping, 100% nylon.",
     colorways: [
+      {
+        sku: "REV-001-LVT",
+        name: "Lab Violet",
+        hex: "#5B2C7A",
+        pipingHex: "#F4F2EE",
+        description: "PANEL CONSTRUCTION STUDY",
+        image: "/images/prototype-011.png",
+      },
       {
         sku: "REV-001-LBK",
         name: "Lab Black",
