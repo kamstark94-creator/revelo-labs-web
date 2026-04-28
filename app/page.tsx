@@ -3,6 +3,7 @@ import { BuyZone } from "@/components/sections/BuyZone";
 import { Footer } from "@/components/sections/Footer";
 import { LabNotes } from "@/components/sections/LabNotes";
 import { Method } from "@/components/sections/Method";
+import { MotionGallery } from "@/components/sections/MotionGallery";
 import { Nav } from "@/components/sections/Nav";
 import { Waitlist } from "@/components/sections/Waitlist";
 import { Marquee } from "@/components/ui/Marquee";
@@ -21,6 +22,7 @@ export default function Home() {
         <BuyZone />
         <Marquee text={copy.hero.marquee} />
         <Method />
+        <MotionGallery />
         <LabNotes />
         <div className="hidden border-y border-hairline md:block">
           <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-2 px-6 py-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] md:flex-row md:justify-between md:px-12 md:text-left lg:px-16">
