@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 type MotionRevealProps = {
@@ -22,6 +22,17 @@ const item: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
+function useMotionEnabled() {
+  const reduceMotion = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return mounted && !reduceMotion;
+}
+
 export function MotionReveal({
   children,
   className,
@@ -29,9 +40,9 @@ export function MotionReveal({
   viewportMargin = "-100px",
   mode = "mount",
 }: MotionRevealProps) {
-  const reduceMotion = useReducedMotion();
+  const motionEnabled = useMotionEnabled();
 
-  if (reduceMotion) {
+  if (!motionEnabled) {
     return <div className={className}>{children}</div>;
   }
 
@@ -57,9 +68,9 @@ export function MotionReveal({
 }
 
 export function MotionRevealItem({ children, className }: { children: ReactNode; className?: string }) {
-  const reduceMotion = useReducedMotion();
+  const motionEnabled = useMotionEnabled();
 
-  if (reduceMotion) {
+  if (!motionEnabled) {
     return <div className={className}>{children}</div>;
   }
 
