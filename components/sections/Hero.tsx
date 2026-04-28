@@ -12,7 +12,7 @@ export function Hero() {
   const labBlack = experiment.colorways[0];
 
   return (
-    <section className="overflow-hidden pt-[64px] md:pt-[120px]">
+    <section id="hero" className="overflow-hidden pt-[64px] md:pt-[120px]">
       <MotionReveal className="mx-auto grid max-w-[1280px] gap-12 px-6 pb-[64px] md:px-12 md:pb-[64px] lg:grid-cols-[1fr_minmax(0,500px)] lg:gap-16 lg:px-16">
         <div className="order-1">
           <MotionRevealItem>

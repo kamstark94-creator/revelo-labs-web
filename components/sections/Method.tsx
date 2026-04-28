@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 
 export function Method() {
   return (
-    <section className="py-[64px] md:py-[112px]">
+    <section id="method" className="py-[64px] md:py-[112px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.method.sectionLabel} />
         <MotionReveal
