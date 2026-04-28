@@ -48,43 +48,77 @@ export function Product() {
     ["PRICE", priceDisplay],
   ] as const;
 
+  const renderColorwayCards = () =>
+    experiment.colorways.map((colorway) => {
+      const active = colorway.sku === activeSku;
+      return (
+        <button
+          key={colorway.sku}
+          type="button"
+          className="group flex min-h-[220px] flex-col rounded-sm border border-hairline bg-surface p-6 text-left transition-colors duration-200 hover:bg-surface-2"
+          onClick={() => setActiveSku(colorway.sku)}
+        >
+          <span
+            className={cn(
+              "block h-20 w-20 rounded-full transition-all duration-200",
+              active ? "ring-2 ring-brand" : "ring-1 ring-hairline group-hover:ring-2 group-hover:ring-ink",
+            )}
+            style={{ backgroundColor: colorway.hex }}
+          />
+          <span className="mt-6 block font-display text-[20px] uppercase leading-none tracking-[0.02em] text-ink">
+            {colorway.name}
+          </span>
+          <span className="mt-2 block font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
+            {colorway.sku}
+          </span>
+          <span className="mt-auto pt-6 font-mono text-[12px] uppercase tracking-[0.05em] text-muted">
+            {colorway.description}
+          </span>
+        </button>
+      );
+    });
+
+  const specSheet = (
+    <>
+      <MonoLabel>{copy.product.specHeading}</MonoLabel>
+      <div className="mt-6">
+        {specRows.map(([label, value]) => (
+          <SpecRow key={label} label={label} value={value} />
+        ))}
+      </div>
+      <p className="mt-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-muted">
+        {copy.product.specEndLine}
+      </p>
+    </>
+  );
+
   return (
     <section id="product" className="py-[64px] md:py-[112px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.product.sectionLabel} />
-        <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-x-8">
+
+        <div className="mt-12 md:hidden">
+          <MonoLabel>{copy.product.colorwaysHeading}</MonoLabel>
+          <div className="mt-6 grid grid-cols-1 gap-4">{renderColorwayCards()}</div>
+
+          <div className="mx-auto mt-8 max-w-[190px]">
+            <ProductIllustration size="product" colorway={activeColorway} imageSrc={experiment.images.hero} alt={experiment.name} />
+          </div>
+
+          <div className="mt-8 border-y border-hairline py-6 text-center font-mono text-[16px] uppercase tracking-[0.05em] text-ink">
+            PRICE / {priceDisplay}
+          </div>
+          <Button className="mt-6 w-full" variant="primary" size="lg" onClick={handleAddToLab}>
+            {copy.product.addToLabLabel}
+          </Button>
+
+          <div id="spec-mobile" className="mt-10">{specSheet}</div>
+        </div>
+
+        <div className="mt-16 hidden gap-12 md:grid lg:grid-cols-12 lg:gap-x-8">
           <div className="lg:col-span-6">
             <MonoLabel>{copy.product.colorwaysHeading}</MonoLabel>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {experiment.colorways.map((colorway) => {
-                const active = colorway.sku === activeSku;
-                return (
-                  <button
-                    key={colorway.sku}
-                    type="button"
-                    className="group flex min-h-[220px] flex-col rounded-sm border border-hairline bg-surface p-6 text-left transition-colors duration-200 hover:bg-surface-2"
-                    onClick={() => setActiveSku(colorway.sku)}
-                  >
-                    <span
-                      className={cn(
-                        "block h-20 w-20 rounded-full transition-all duration-200",
-                        active ? "ring-2 ring-brand" : "ring-1 ring-hairline group-hover:ring-2 group-hover:ring-ink",
-                      )}
-                      style={{ backgroundColor: colorway.hex }}
-                    />
-                    <span className="mt-6 block font-display text-[20px] uppercase leading-none tracking-[0.02em] text-ink">
-                      {colorway.name}
-                    </span>
-                    <span className="mt-2 block font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
-                      {colorway.sku}
-                    </span>
-                    <span className="mt-auto pt-6 font-mono text-[12px] uppercase tracking-[0.05em] text-muted">
-                      {colorway.description}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">{renderColorwayCards()}</div>
           </div>
 
           <div className="lg:col-span-3">
@@ -94,19 +128,12 @@ export function Product() {
           </div>
 
           <div id="spec" className="lg:col-span-3">
-            <MonoLabel>{copy.product.specHeading}</MonoLabel>
-            <div className="mt-6">
-              {specRows.map(([label, value]) => (
-                <SpecRow key={label} label={label} value={value} />
-              ))}
-            </div>
-            <p className="mt-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-muted">
-              {copy.product.specEndLine}
-            </p>
+            {specSheet}
             <Button className="mt-8 w-full" variant="primary" size="lg" onClick={handleAddToLab}>
               {copy.product.addToLabLabel}
             </Button>
-          </div>        </div>
+          </div>
+        </div>
       </div>
     </section>
   );
