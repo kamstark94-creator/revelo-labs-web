@@ -20,8 +20,7 @@ export function LabNoteCard({ note }: { note: LabNote }) {
         href="/lab-notes"
         className="mt-auto inline-flex pt-8 font-mono text-[13px] uppercase tracking-[0.05em] text-ink"
       >
-        <span>READ ENTRY →</span>
-        <span className="sr-only">Open lab note</span>
+        <span className="transition-transform duration-200 group-hover:translate-x-1">READ ENTRY →</span>
       </Link>
     </article>
   );
