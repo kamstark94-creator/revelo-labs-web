@@ -3,13 +3,13 @@ import { notFound } from "next/navigation";
 import { BuyZone } from "@/components/sections/BuyZone";
 import { Footer } from "@/components/sections/Footer";
 import { LabNoteCard } from "@/components/sections/LabNotes";
+import { MotionStudy } from "@/components/sections/MotionStudy";
 import { Nav } from "@/components/sections/Nav";
 import { Button } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { experiments } from "@/content/experiments";
 import { labNotes } from "@/content/lab-notes";
-import { cn } from "@/lib/cn";
 
 export function generateStaticParams() {
   return [{ id: "001" }];
@@ -51,39 +51,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
           </div>
         </section>
 
-        <section className="pb-[120px] md:pb-[160px]">
-          <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
-            <SectionDivider label="PROTOTYPE LOG" />
-            <div className="mt-12 overflow-x-auto">
-              <div className="flex min-w-max gap-4">
-                {Array.from(
-                  { length: experiment.prototypeCount },
-                  (_, index) => {
-                    const prototypeNumber = index + 1;
-                    const active =
-                      prototypeNumber === experiment.prototypeCount;
-                    return (
-                      <div key={prototypeNumber} className="text-center">
-                        <div
-                          className={cn(
-                            "h-8 w-8 border border-hairline",
-                            active && "border-brand bg-brand",
-                          )}
-                        />
-                        <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.05em] text-muted">
-                          P-{String(prototypeNumber).padStart(3, "0")}
-                        </p>
-                      </div>
-                    );
-                  },
-                )}
-              </div>
-            </div>
-            <p className="mt-8 font-mono text-[13px] uppercase tracking-[0.05em] text-muted">
-              14 prototypes. 7 panels. 1 release.
-            </p>
-          </div>
-        </section>
+        <MotionStudy />
 
         <section className="pb-[96px] md:pb-[120px]">
           <div className="mx-auto grid max-w-[1280px] gap-6 px-6 md:px-12 lg:grid-cols-2 lg:px-16">
