@@ -54,7 +54,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
     <>
       <Nav />
       <div className="mx-auto max-w-[1280px] px-6 py-6 font-mono text-[11px] uppercase md:text-[13px] tracking-[0.05em] md:px-12 lg:px-16">
-        <Link href="/experiments/001" className="text-muted transition-colors hover:text-brand">
+        <Link href="/experiments/001" className="inline-flex min-h-11 items-center text-muted transition-colors hover:text-brand">
           EXPERIMENTS
         </Link>
         <span className="text-muted"> / </span>
