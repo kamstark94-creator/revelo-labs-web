@@ -166,8 +166,10 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
                 <p className="mt-5 text-[15px] leading-[1.6] text-body">
                   Wear-testing now. Prototype 003. Get on the list for early access.
                 </p>
-                <Link href="/#waitlist" className="mt-auto inline-flex pt-8">
-                  <Button variant="primary" size="lg">GET LAB ACCESS</Button>
+                <Link href="/#waitlist" className="mt-auto flex pt-8">
+                  <Button className="w-full" variant="primary" size="lg">
+                    GET LAB ACCESS
+                  </Button>
                 </Link>
               </div>
             </div>
