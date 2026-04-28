@@ -14,7 +14,7 @@ export const copy = {
     ctaPrimary: { label: "ENTER THE LAB", href: "/experiments/001" },
     ctaSecondary: { label: "READ THE SPEC SHEET", href: "#spec" },
     marquee:
-      "EXPERIMENT 001 // PROTOTYPE 014 // 100% NYLON // MADE IN MOTION // LAB-GREEN PIPING // 7 PANELS //",
+      "PROTOTYPE 014 // 100% NYLON // 7 PANELS // BONDED SEAMS // MADE IN MOTION // LAB-GREEN PIPING //",
   },
   method: {
     sectionLabel: "THE METHOD",
@@ -39,7 +39,7 @@ export const copy = {
   product: {
     sectionLabel: "THE PRODUCT",
     colorwaysHeading: "ALL COLORWAYS",
-    specHeading: "SPEC SHEET / EXP-001",
+    specHeading: "SPEC SHEET / 001",
     specEndLine: "···· END OF SPECIFICATION ····",
     addToLabLabel: "ADD TO LAB",
   },
@@ -47,7 +47,7 @@ export const copy = {
     sectionLabel: "LAB NOTES / 001",
   },
   waitlist: {
-    kicker: "EXPERIMENT 002 / IN DEVELOPMENT",
+    kicker: "EARLY ACCESS / PROTOTYPE NOTES / LIMITED RELEASE WINDOWS",
     headline: "THE NEXT EXPERIMENT\nDROPS IN MOTION.",
     placeholder: "your@email.com",
     cta: "GET LAB ACCESS",

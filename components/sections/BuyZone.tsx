@@ -162,11 +162,21 @@ export function BuyZone() {
         onClick={() => setSpecOpen((open) => !open)}
         aria-expanded={specOpen}
       >
-        <span>{copy.product.specHeading}</span>
+        <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-left">
+          <span>{copy.product.specHeading}</span>
+          <span aria-hidden="true">{" — "}</span>
+          <span>9 SPECS</span>
+        </span>
         {specOpen ? (
-          <ChevronUp aria-hidden="true" className="h-4 w-4" />
+          <ChevronUp
+            aria-hidden="true"
+            className="h-4 w-4 animate-[spec-chevron-pulse_1.6s_ease-in-out_infinite]"
+          />
         ) : (
-          <ChevronDown aria-hidden="true" className="h-4 w-4" />
+          <ChevronDown
+            aria-hidden="true"
+            className="h-4 w-4 animate-[spec-chevron-pulse_1.6s_ease-in-out_infinite]"
+          />
         )}
       </button>
       <div className="hidden md:block">

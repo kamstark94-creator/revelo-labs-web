@@ -6,7 +6,7 @@ export function MotionGallery() {
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label="BUILT IN MOTION" />
         <p className="mt-6 font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
-          EXPERIMENT 001 / FIELD TESTED
+          FIELD TESTED / 001
         </p>
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
           {/* TODO: Replace with /public/images/motion-01.jpg
