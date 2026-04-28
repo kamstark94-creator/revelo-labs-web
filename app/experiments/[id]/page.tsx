@@ -8,7 +8,6 @@ import { Nav } from "@/components/sections/Nav";
 import { Button } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { SectionDivider } from "@/components/ui/SectionDivider";
-import { experiments } from "@/content/experiments";
 import { labNotes } from "@/content/lab-notes";
 
 export function generateStaticParams() {
@@ -24,7 +23,6 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
     notFound();
   }
 
-  const experiment = experiments[0];
   const firstLabNote = labNotes[0];
 
   return (
@@ -34,20 +32,57 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
         <BuyZone />
 
         <section className="pb-[64px] md:pb-[120px]">
-          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-4 px-6 md:grid-cols-2 md:px-12 lg:grid-cols-4 lg:px-16">
-            {experiment.images.details.map((image, index) => (
-              <div
-                key={index}
-                className="aspect-square border border-hairline bg-surface"
-              >
-                {/* TODO: Replace placeholder with Experiment 001 detail photography. */}
-                {image ? null : (
-                  <div className="flex h-full items-center justify-center font-mono text-[12px] uppercase tracking-[0.05em] text-muted">
-                    DETAIL_{String(index + 1).padStart(2, "0")}
-                  </div>
-                )}
+          <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
+            <SectionDivider label="CONSTRUCTION DETAILS / EXP-001" />
+            <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+              {/* TODO: Replace with /public/images/detail-01.jpg
+                  Required: 1200×1200px (1:1 square), JPG/PNG
+                  Description: Macro shot of bonded seam where two
+                  panels join — fabric texture, hard side lighting,
+                  no thread visible (bonded edge) */}
+              <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
+                <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
+                  DETAIL_01 / BONDED SEAM
+                </div>
               </div>
-            ))}
+
+              {/* TODO: Replace with /public/images/detail-02.jpg
+                  Required: 1200×1200px (1:1 square), JPG/PNG
+                  Description: Inner thigh motion gusset — angular
+                  shot showing panel shape and integration with
+                  surrounding fabric */}
+              <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
+                <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
+                  DETAIL_02 / MOTION GUSSET
+                </div>
+              </div>
+
+              {/* TODO: Replace with /public/images/detail-03.jpg
+                  Required: 1200×1200px (1:1 square), JPG/PNG
+                  Description: Bottom cuff close-up — elastic ribbing,
+                  piping line (white on Lab Violet, lab-green on
+                  others), visible fabric weave */}
+              <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
+                <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
+                  DETAIL_03 / CUFF + PIPING
+                </div>
+              </div>
+
+              {/* TODO: Replace with /public/images/detail-04.jpg
+                  Required: 1200×1200px (1:1 square), JPG/PNG
+                  Description: Macro of zipper pocket — zipper pull
+                  sharp, hardware visible, surrounding fabric slightly
+                  soft */}
+              <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
+                <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
+                  DETAIL_04 / ZIPPER POCKET
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
