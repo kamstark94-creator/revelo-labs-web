@@ -15,7 +15,7 @@ one with finalized data before public launch.
 - [ ] 4 detail shots for product detail page
 - [ ] Final price (currently $148 — placeholder)
 - [ ] Final weight (currently 320G — placeholder)
-- [ ] Country of origin (currently TBD)
+- [ ] Country of origin (currently [PENDING])
 - [ ] Care instructions (currently "COLD WASH / HANG DRY" — confirm)
 
 ## Lab Notes
