@@ -56,7 +56,7 @@ export function ProductIllustration({
   alt = colorway.name,
 }: ProductIllustrationProps) {
   const wrapperClass = cn(
-    "relative mx-auto aspect-[2/3] w-full",
+    "relative mx-auto flex aspect-[2/3] w-full items-center justify-center",
     size === "hero" ? "max-w-[500px]" : "max-w-[420px]",
   );
   const resolvedImage = colorway.image ?? imageSrc;
@@ -69,7 +69,7 @@ export function ProductIllustration({
           alt={colorway.image ? "Revelo Labs " + colorway.name + " — Experiment 001" : alt}
           width={400}
           height={600}
-          className="h-auto max-h-[60vh] w-full object-contain md:max-h-none"
+          className="h-auto max-h-[60vh] w-auto max-w-full object-contain md:max-h-none md:w-full"
           priority={size === "hero"}
         />
         <div className="pointer-events-none absolute inset-0 hidden md:block">
