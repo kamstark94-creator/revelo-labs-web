@@ -44,3 +44,21 @@ a {
     opacity: 1;
   }
 }
+
+@keyframes swatch-scan-line {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(var(--swatch-scan-distance));
+  }
+
+  41%,
+  100% {
+    opacity: 0;
+    transform: translateY(var(--swatch-scan-distance));
+  }
+}

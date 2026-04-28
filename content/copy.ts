@@ -1,3 +1,7 @@
+import { experiments } from "./experiments";
+
+const experiment = experiments[0];
+
 export const copy = {
   nav: {
     links: [
@@ -8,13 +12,13 @@ export const copy = {
     cartLabel: "LAB",
   },
   hero: {
-    kicker: "EXPERIMENT 001 / LAUNCHED 04.2026 / 5 COLORWAYS",
+    kicker: `${experiment.fullLabel} / 5 COLORWAYS / LAUNCHED 04.2026`,
     headline: "ENGINEERED TO STAND OUT.",
     sub: "We don't release products. We release experiments. Experiment 001 is the first garment out of the lab — documented, iterated, and worn.",
     ctaPrimary: { label: "ENTER THE LAB", href: "/experiments/001" },
     ctaSecondary: { label: "READ THE SPEC SHEET", href: "#spec" },
     marquee:
-      "PROTOTYPE 014 // 100% NYLON // 7 PANELS // BONDED SEAMS // MADE IN MOTION // LAB-GREEN PIPING //",
+      "100% NYLON // 7 PANELS // BONDED SEAMS // MADE IN MOTION // LAB-GREEN PIPING // 100% NYLON //",
   },
   method: {
     sectionLabel: "THE METHOD",
@@ -22,7 +26,7 @@ export const copy = {
       {
         kicker: "01 / METHOD",
         headline: "THE PROCESS\nIS THE PRODUCT",
-        body: "Concept. Prototype. Test. Refine. Release. Improve. Every garment is documented. Every iteration is public.",
+        body: "Concept. Pattern. Test. Refine. Release. Improve. Every garment is documented. Every iteration is public.",
       },
       {
         kicker: "02 / MATERIAL",
@@ -47,11 +51,11 @@ export const copy = {
     sectionLabel: "LAB NOTES / 001",
   },
   waitlist: {
-    kicker: "EARLY ACCESS / PROTOTYPE NOTES / LIMITED RELEASE WINDOWS",
+    kicker: "EARLY ACCESS / DEVELOPMENT NOTES / LIMITED RELEASE WINDOWS",
     headline: "THE NEXT EXPERIMENT\nDROPS IN MOTION.",
     placeholder: "your@email.com",
     cta: "GET LAB ACCESS",
-    valueProps: "EARLY ACCESS / PROTOTYPE NOTES / LIMITED RELEASE WINDOWS",
+    valueProps: "EARLY ACCESS / DEVELOPMENT NOTES / LIMITED RELEASE WINDOWS",
     privacy: "NO SPAM. NO SALE ALERTS. LAB UPDATES ONLY.",
     success: "ON THE LIST. EXPERIMENT 002 INCOMING.",
   },
@@ -59,12 +63,12 @@ export const copy = {
     headline: "BUILT LIKE A FIELD NOTE. WORN LIKE A SIGNAL.",
     intro: [
       "Revelo Labs exists for the space between performance gear and public documentation. Every release starts as a question: what should a garment prove before it deserves to exist?",
-      "Experiment 001 is our first answer. It is not a seasonal drop or a logo exercise. It is a record of material choices, prototype failures, construction logic, and motion tests made visible in the finished piece.",
+      "Experiment 001 is our first answer. It is not a seasonal drop or a logo exercise. It is a record of material choices, failed trials, construction logic, and motion tests made visible in the finished piece.",
     ],
     sections: [
       {
         label: "THE METHOD",
-        body: "Concept. Prototype. Test. Refine. Release. Improve. Experiment 001 went through fourteen prototypes before release. Each iteration is logged. Each rejected version is documented. The process is the product.",
+        body: "Concept. Prototype. Test. Refine. Release. Improve. The first release moved through repeated fit and material trials before release. Each iteration is logged. Each rejected version is documented. The process is the product.",
       },
       {
         label: "WHAT WE ARE NOT",

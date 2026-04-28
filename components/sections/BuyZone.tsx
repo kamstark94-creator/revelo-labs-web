@@ -58,7 +58,7 @@ export function BuyZone() {
   const colorwaySelector = (
     <div>
       <div
-        className="relative z-20 flex items-center gap-[10px] md:gap-3"
+        className="relative z-20 flex items-start gap-3"
         aria-label="Select colorway"
       >
         {experiment.colorways.map((colorway) => {
@@ -71,24 +71,52 @@ export function BuyZone() {
               type="button"
               aria-label={"Select " + colorway.name}
               aria-pressed={active}
-              className={cn(
-                "relative h-14 w-14 shrink-0 cursor-pointer rounded-full transition-all duration-200 active:scale-[0.98] md:h-12 md:w-12",
-                active
-                  ? "ring-2 ring-brand"
-                  : "ring-1 ring-hairline hover:ring-2 hover:ring-ink",
-              )}
-              style={{ backgroundColor: colorway.hex }}
+              className="group flex min-w-11 shrink-0 cursor-pointer flex-col items-center text-center focus-visible:outline-none active:scale-[0.98]"
               onClick={() => setActiveSku(colorway.sku)}
             >
-              {isBone ? (
-                <span className="border-bg/30 absolute inset-[3px] rounded-full border" />
-              ) : null}
+              <span className="relative flex h-[52px] w-[52px] items-center justify-center md:h-14 md:w-14">
+                <span
+                  className={cn(
+                    "absolute -inset-[6px] rounded-full border-2 transition-colors duration-200",
+                    active
+                      ? "border-brand"
+                      : "group-focus-visible:border-brand/60 border-transparent",
+                  )}
+                />
+                <span
+                  className={cn(
+                    "relative h-10 w-10 overflow-hidden rounded-full border [--swatch-scan-distance:40px] md:h-11 md:w-11 md:[--swatch-scan-distance:44px]",
+                    active
+                      ? "border-transparent"
+                      : "border-brand/40 group-hover:border-brand/70 transition-colors duration-200",
+                  )}
+                  style={{ backgroundColor: colorway.hex }}
+                >
+                  {isBone ? (
+                    <span className="border-bg/30 absolute inset-[3px] rounded-full border" />
+                  ) : null}
+                  {active ? (
+                    <span className="absolute inset-x-0 top-0 h-px animate-[swatch-scan-line_3s_linear_infinite] bg-brand" />
+                  ) : null}
+                </span>
+              </span>
+              <span
+                className={cn(
+                  "mt-2 font-mono text-[10px] uppercase leading-none tracking-[0.05em] transition-colors duration-200",
+                  active ? "text-brand" : "text-brand/60",
+                )}
+              >
+                {colorway.code}
+              </span>
+              <span className="mt-1 h-[9px] font-mono text-[9px] uppercase leading-none tracking-[0.05em] text-brand">
+                {active ? "ACTIVE" : ""}
+              </span>
             </button>
           );
         })}
       </div>
-      <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.05em] text-muted md:hidden">
-        TAP TO SWITCH COLORWAY
+      <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.05em] text-brand md:hidden">
+        TAP TO SELECT
       </p>
     </div>
   );
@@ -109,9 +137,6 @@ export function BuyZone() {
         </p>
         <p className="mt-2 font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
           {activeColorway.sku}
-        </p>
-        <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.05em] text-muted">
-          {activeColorway.description}
         </p>
       </div>
     </div>

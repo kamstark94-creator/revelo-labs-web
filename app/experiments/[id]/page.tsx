@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BuyZone } from "@/components/sections/BuyZone";
@@ -8,7 +9,21 @@ import { Nav } from "@/components/sections/Nav";
 import { Button } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { experiments } from "@/content/experiments";
 import { labNotes } from "@/content/lab-notes";
+
+const experiment = experiments[0];
+
+const titleCase = (value: string): string =>
+  value.toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+const metaLabel = experiment.fullLabel
+  .replace("EXPERIMENT", "Experiment")
+  .replace(experiment.name, titleCase(experiment.name));
+
+export const metadata: Metadata = {
+  title: metaLabel + " | Revelo Labs",
+};
 
 export function generateStaticParams() {
   return [{ id: "001" }];
@@ -104,8 +119,8 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
                   THE NEXT EXPERIMENT DROPS IN MOTION.
                 </h2>
                 <p className="mt-5 text-[15px] leading-[1.6] text-body">
-                  Wear-testing now. Prototype 003. Get on the list for early
-                  access.
+                  Wear-testing now. Development sample 003. Get on the list for
+                  early access.
                 </p>
                 <Link href="/#waitlist" className="mt-auto flex pt-8">
                   <Button className="w-full" variant="primary" size="lg">

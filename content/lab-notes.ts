@@ -13,15 +13,15 @@ export const labNotes: LabNote[] = [
     category: "MATERIAL",
     headline: "WHY WE REJECTED POLYESTER",
     preview:
-      "Polyester moves with you. Nylon moves for you. We ran 11 prototypes before the distinction became clear in wear data.",
+      "Polyester moves with you. Nylon moves for you. We ran 11 material trials before the distinction became clear in wear data.",
   },
   {
-    slug: "prototype-011",
+    slug: "panel-that-didnt-work",
     date: "02.27.2026",
     category: "PROCESS",
-    headline: "PROTOTYPE 011 — THE PANEL THAT DIDN'T WORK",
+    headline: "THE PANEL THAT DIDN'T WORK",
     preview:
-      "The fourth panel iteration added visual mass without adding function. We cut it. The silhouette improved immediately.",
+      "An early panel layout added visual mass without adding function. We cut it. The silhouette improved immediately.",
   },
   {
     slug: "green-as-structural-element",
