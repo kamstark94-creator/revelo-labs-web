@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 
 export function Method() {
   return (
-    <section id="method" className="py-[80px] md:py-[112px]">
+    <section id="method" className="py-[56px] md:py-[80px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.method.sectionLabel} />
         <MotionReveal
@@ -29,7 +29,9 @@ export function Method() {
               <h3 className="mt-4 whitespace-pre-line font-display text-[22px] uppercase leading-[1.05] tracking-[0.02em] text-ink md:text-[36px]">
                 {block.headline}
               </h3>
-              <p className="mt-6 max-w-[280px] text-[15px] leading-[1.6] text-body md:text-[16px] md:leading-normal">{block.body}</p>
+              <p className="mt-6 max-w-[280px] text-[15px] leading-[1.6] text-body md:text-[16px] md:leading-normal">
+                {block.body}
+              </p>
             </MotionRevealItem>
           ))}
         </MotionReveal>
