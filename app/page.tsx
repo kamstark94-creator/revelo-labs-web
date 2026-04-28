@@ -25,7 +25,7 @@ export default function Home() {
         <div className="border-y border-hairline">
           <div className="mx-auto flex max-w-[1280px] flex-col gap-3 px-6 py-6 font-mono text-[13px] uppercase tracking-[0.05em] md:flex-row md:items-center md:justify-between md:px-12 lg:px-16">
             <span className="text-muted">CURRENTLY IN LAB →</span>
-            <span className="text-brand">EXPERIMENT_002 / PROTOTYPE 003</span>
+            <span className="text-brand">EXPERIMENT 002 / PROTOTYPE 003</span>
             <span className="text-muted">STATUS: WEAR TESTING</span>
           </div>
         </div>

@@ -53,7 +53,7 @@ export const copy = {
     cta: "GET LAB ACCESS",
     valueProps: "EARLY ACCESS / PROTOTYPE NOTES / LIMITED RELEASE WINDOWS",
     privacy: "NO SPAM. NO SALE ALERTS. LAB UPDATES ONLY.",
-    success: "ON THE LIST. EXPERIMENT_002 INCOMING.",
+    success: "ON THE LIST. EXPERIMENT 002 INCOMING.",
   },
   about: {
     headline: "BUILT LIKE A FIELD NOTE. WORN LIKE A SIGNAL.",
