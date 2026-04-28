@@ -88,7 +88,7 @@ export function Product() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="mx-auto max-w-[320px]">
+            <div className="mx-auto max-w-[190px] md:max-w-[320px]">
               <ProductIllustration size="product" colorway={activeColorway} imageSrc={experiment.images.hero} alt={experiment.name} />
             </div>
           </div>

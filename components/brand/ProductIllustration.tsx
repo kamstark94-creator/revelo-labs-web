@@ -60,6 +60,10 @@ export function ProductIllustration({
     size === "hero" ? "max-w-[500px]" : "max-w-[420px]",
   );
   const resolvedImage = colorway.image ?? imageSrc;
+  const imageClass = cn(
+    "h-auto w-auto max-w-full object-contain md:max-h-none md:w-full",
+    size === "product" ? "max-h-[280px]" : "max-h-[60vh]",
+  );
 
   if (resolvedImage) {
     return (
@@ -69,7 +73,7 @@ export function ProductIllustration({
           alt={colorway.image ? "Revelo Labs " + colorway.name + " — Experiment 001" : alt}
           width={400}
           height={600}
-          className="h-auto max-h-[60vh] w-auto max-w-full object-contain md:max-h-none md:w-full"
+          className={imageClass}
           priority={size === "hero"}
         />
         <div className="absolute right-4 top-4 border border-brand/40 px-2 py-1 font-mono text-[11px] uppercase tracking-[0.05em] text-brand">
