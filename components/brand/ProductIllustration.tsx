@@ -72,6 +72,9 @@ export function ProductIllustration({
           className="h-auto max-h-[60vh] w-auto max-w-full object-contain md:max-h-none md:w-full"
           priority={size === "hero"}
         />
+        <div className="absolute right-4 top-4 border border-brand/40 px-2 py-1 font-mono text-[11px] uppercase tracking-[0.05em] text-brand">
+          LAB SAMPLE / 001
+        </div>
         <div className="pointer-events-none absolute inset-0 hidden md:block">
           <svg aria-hidden="true" className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             {photoCallouts.map((callout) => (
