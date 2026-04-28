@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t border-hairline">
       <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
           <div>
             <Logo variant="full" />
             <p className="mt-6 font-mono text-[13px] uppercase tracking-[0.05em] text-muted">

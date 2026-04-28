@@ -95,11 +95,19 @@ export const copy = {
         ],
       },
       {
-        heading: "SUPPORT",
+        heading: "SHOP",
         links: [
-          { label: "Sizing", href: "#" },
-          { label: "Returns", href: "#" },
-          { label: "Contact", href: "#" },
+          { label: "Sizing", href: "/support/sizing" },
+          { label: "Shipping", href: "/support/shipping" },
+          { label: "Returns", href: "/support/returns" },
+          { label: "Contact", href: "/support/contact" },
+        ],
+      },
+      {
+        heading: "LEGAL",
+        links: [
+          { label: "Privacy", href: "/legal/privacy" },
+          { label: "Terms", href: "/legal/terms" },
         ],
       },
       {
