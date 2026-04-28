@@ -57,11 +57,26 @@ export const copy = {
   },
   about: {
     headline: "BUILT LIKE A FIELD NOTE. WORN LIKE A SIGNAL.",
-    paragraphs: [
+    intro: [
       "Revelo Labs exists for the space between performance gear and public documentation. Every release starts as a question: what should a garment prove before it deserves to exist?",
       "Experiment 001 is our first answer. It is not a seasonal drop or a logo exercise. It is a record of material choices, prototype failures, construction logic, and motion tests made visible in the finished piece.",
-      "We build athletic apparel with an editorial spine: fewer products, clearer reasons, sharper details. If a panel does not improve movement, it goes. If a color does not explain construction, it waits. The lab is the method and the method is the brand.",
     ],
+    sections: [
+      {
+        label: "THE METHOD",
+        body: "Concept. Prototype. Test. Refine. Release. Improve. Experiment 001 went through fourteen prototypes before release. Each iteration is logged. Each rejected version is documented. The process is the product.",
+      },
+      {
+        label: "WHAT WE ARE NOT",
+        body: "We are not a uniform. We are not a sale rack. We are not a logo exercise. We do not chase volume. We do not run discount cycles. We do not staff a roster of athletes paid to wear our clothes. The lab does not need ambassadors. The clothes speak when they move.",
+      },
+      {
+        label: "WHO IT'S FOR",
+        body: "For the ones who refuse to blend in. Confident, expressive, intentional — in motion.",
+      },
+    ],
+    closing: "BUILT IN THE LAB. ENGINEERED TO STAND OUT.",
+    cta: { label: "READ EXPERIMENT 001", href: "/experiments/001" },
   },
   notFound: {
     headline: "404 / NOT IN THE LAB",
