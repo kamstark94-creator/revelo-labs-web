@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-hairline">
       <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
-          <div>
+          <div className="md:col-span-2 lg:col-span-1">
             <Logo variant="full" />
             <p className="mt-6 font-mono text-[13px] uppercase tracking-[0.05em] text-muted">
               {copy.footer.tagline}
@@ -22,7 +22,7 @@ export function Footer() {
               <ul className="mt-5 space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="text-ink transition-colors hover:text-brand">
+                    <Link href={link.href} className="inline-flex min-h-11 items-center text-ink transition-colors hover:text-brand active:text-brand">
                       {link.label}
                     </Link>
                   </li>
@@ -32,7 +32,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col justify-between gap-4 border-t border-hairline pt-8 md:flex-row md:items-center">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-hairline pt-8 text-center md:flex-row md:items-center md:text-left">
           <p className="font-mono text-[12px] uppercase tracking-[0.05em] text-muted">
             {copy.footer.copyright}
           </p>
