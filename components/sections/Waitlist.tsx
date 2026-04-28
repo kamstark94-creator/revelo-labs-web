@@ -29,6 +29,9 @@ export function Waitlist() {
   return (
     <section id="waitlist" className="py-[160px] md:py-[140px]">
       <div className="mx-auto max-w-[1280px] px-6 text-center md:px-12 lg:px-16">
+        <div className="md:hidden">
+          <MonoLabel accent>{copy.waitlist.kicker}</MonoLabel>
+        </div>
         <h2 className="mx-auto mt-8 max-w-[300px] whitespace-pre-line md:max-w-[980px] font-display text-[44px] uppercase leading-[0.95] tracking-[0.02em] text-ink md:text-[64px] lg:text-[80px]">
           {copy.waitlist.headline}
         </h2>
