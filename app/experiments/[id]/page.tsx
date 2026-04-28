@@ -53,7 +53,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
   return (
     <>
       <Nav />
-      <div className="mx-auto max-w-[1280px] px-6 py-6 font-mono text-[13px] uppercase tracking-[0.05em] md:px-12 lg:px-16">
+      <div className="mx-auto max-w-[1280px] px-6 py-6 font-mono text-[11px] uppercase md:text-[13px] tracking-[0.05em] md:px-12 lg:px-16">
         <Link href="/experiments/001" className="text-muted transition-colors hover:text-brand">
           EXPERIMENTS
         </Link>
@@ -76,6 +76,26 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
               </p>
               <div className="mt-10">
                 <ProductIllustration colorway={labBlack} size="hero" imageSrc={experiment.images.hero} alt={experiment.name} />
+              </div>
+
+              <div className="mt-10 border border-hairline bg-surface p-6 lg:hidden">
+                <MonoLabel>{copy.product.specHeading}</MonoLabel>
+                <div className="mt-6">
+                  {specRows.map(([label, value]) => (
+                    <SpecRow key={label} label={label} value={value} />
+                  ))}
+                </div>
+                <div className="mt-6 border-t border-hairline pt-5">
+                  <p className="font-mono text-[12px] uppercase tracking-[0.05em] text-brand">FIT & SIZING</p>
+                  <div className="mt-3">
+                    {fitRows.map(([label, value]) => (
+                      <SpecRow key={label} label={label} value={value} />
+                    ))}
+                  </div>
+                </div>
+                <Button className="mt-8 w-full" variant="primary" size="lg">
+                  {copy.product.addToLabLabel}
+                </Button>
               </div>
             </div>
 
@@ -104,7 +124,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
         </section>
 
         <section className="pb-[64px] md:pb-[120px]">
-          <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-4 px-6 md:px-12 lg:grid-cols-4 lg:px-16">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-4 md:grid-cols-2 px-6 md:px-12 lg:grid-cols-4 lg:px-16">
             {experiment.images.details.map((image, index) => (
               <div key={index} className="aspect-square border border-hairline bg-surface">
                 {/* TODO: Replace placeholder with Experiment 001 detail photography. */}
@@ -158,7 +178,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
             </div>
             <div>
               <SectionDivider label="EXPERIMENT 002" />
-              <div className="mt-8 flex min-h-[320px] flex-col rounded-sm border border-hairline bg-surface p-8">
+              <div className="mt-8 flex min-h-[320px] flex-col rounded-sm border border-hairline bg-surface p-6 md:p-8">
                 <MonoLabel accent>IN DEVELOPMENT</MonoLabel>
                 <h2 className="mt-6 font-display text-[28px] uppercase leading-[1.05] tracking-[0.02em] text-ink">
                   THE NEXT EXPERIMENT DROPS IN MOTION.
