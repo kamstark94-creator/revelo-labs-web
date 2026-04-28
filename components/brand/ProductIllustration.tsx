@@ -4,8 +4,8 @@
 //   2. Add 4 detail shots to /public/images/exp-001-detail-{1..4}.jpg
 //   3. Update images.hero and images.details[] in
 //      content/experiments.ts with the file paths
-//   4. This component should check colorway.imageOverride first
-//      and fall back to the SVG if no image is provided
+//   4. This component checks colorway.image first and falls back to
+//      the SVG if no image is provided.
 //
 // The SVG below stays as fallback so the site never has broken images.
 
@@ -20,6 +20,35 @@ type ProductIllustrationProps = {
   alt?: string;
 };
 
+type PhotoCallout = {
+  label: string;
+  className: string;
+  line: { x1: number; y1: number; x2: number; y2: number };
+};
+
+const photoCallouts: PhotoCallout[] = [
+  {
+    label: "BONDED SEAM",
+    className: "left-0 top-[7%]",
+    line: { x1: 17, y1: 8, x2: 47, y2: 13 },
+  },
+  {
+    label: "PANEL CONSTRUCTION",
+    className: "left-0 top-[43%] max-w-[130px]",
+    line: { x1: 24, y1: 46, x2: 48, y2: 52 },
+  },
+  {
+    label: "ZIPPER POCKET",
+    className: "right-0 top-[29%] text-right",
+    line: { x1: 76, y1: 32, x2: 64, y2: 26 },
+  },
+  {
+    label: "100% NYLON",
+    className: "bottom-[7%] left-1/2 -translate-x-1/2",
+    line: { x1: 51, y1: 86, x2: 51, y2: 94 },
+  },
+];
+
 export function ProductIllustration({
   colorway,
   size = "product",
@@ -27,21 +56,49 @@ export function ProductIllustration({
   alt = colorway.name,
 }: ProductIllustrationProps) {
   const wrapperClass = cn(
-    "relative mx-auto w-full",
+    "relative mx-auto aspect-[2/3] w-full",
     size === "hero" ? "max-w-[500px]" : "max-w-[420px]",
   );
+  const resolvedImage = colorway.image ?? imageSrc;
 
-  if (imageSrc) {
+  if (resolvedImage) {
     return (
       <div className={wrapperClass}>
         <Image
-          src={imageSrc}
-          alt={alt}
-          width={800}
-          height={1200}
-          className="h-auto w-full rounded-sm object-cover"
+          src={resolvedImage}
+          alt={colorway.image ? "Revelo Labs " + colorway.name + " — Experiment 001" : alt}
+          width={400}
+          height={600}
+          className="h-auto max-h-[60vh] w-full object-contain md:max-h-none"
           priority={size === "hero"}
         />
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <svg aria-hidden="true" className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            {photoCallouts.map((callout) => (
+              <line
+                key={callout.label}
+                x1={callout.line.x1}
+                y1={callout.line.y1}
+                x2={callout.line.x2}
+                y2={callout.line.y2}
+                stroke="var(--brand)"
+                strokeOpacity="0.5"
+                vectorEffect="non-scaling-stroke"
+              />
+            ))}
+          </svg>
+          {photoCallouts.map((callout) => (
+            <span
+              key={callout.label}
+              className={cn(
+                "absolute font-mono text-[11px] uppercase leading-[1.3] tracking-[0.05em] text-body",
+                callout.className,
+              )}
+            >
+              {callout.label}
+            </span>
+          ))}
+        </div>
       </div>
     );
   }
@@ -53,10 +110,7 @@ export function ProductIllustration({
         role="img"
         aria-label={alt}
         viewBox="0 0 400 600"
-        className={cn(
-          "h-auto w-full overflow-visible",
-          size === "hero" ? "min-h-[520px]" : "min-h-[460px]",
-        )}
+        className="h-auto w-full overflow-visible"
       >
         <defs>
           <filter id="piping-motion-blur" x="-50%" y="-50%" width="200%" height="200%">
