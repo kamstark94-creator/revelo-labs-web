@@ -105,8 +105,9 @@ export function Product() {
             <ProductIllustration size="product" colorway={activeColorway} imageSrc={experiment.images.hero} alt={experiment.name} />
           </div>
 
-          <div className="mt-8 border-y border-hairline py-6 text-center font-mono text-[16px] uppercase tracking-[0.05em] text-ink">
-            PRICE / {priceDisplay}
+          <div className="mt-8 border-y border-hairline py-8 text-center">
+            <p className="font-mono text-[24px] uppercase tracking-[0.05em] text-ink">{priceDisplay}</p>
+            <p className="mt-2 font-mono text-[13px] uppercase tracking-[0.05em] text-muted">USD</p>
           </div>
           <Button className="mt-6 w-full" variant="primary" size="lg" onClick={handleAddToLab}>
             {copy.product.addToLabLabel}
