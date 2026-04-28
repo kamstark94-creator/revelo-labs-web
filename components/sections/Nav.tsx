@@ -64,21 +64,26 @@ export function Nav() {
           <span className={linkBase}>[{copy.nav.cartLabel} / {count}]</span>
         </div>
 
-        <button
-          type="button"
-          aria-label={open ? "Close navigation" : "Open navigation"}
-          aria-expanded={open}
-          className="inline-flex h-10 w-10 items-center justify-center text-ink transition-colors hover:text-brand md:hidden"
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={24} strokeWidth={1.75} /> : <Menu size={24} strokeWidth={1.75} />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <span aria-label="Lab count" className="font-mono text-[12px] uppercase tracking-[0.05em] text-brand">
+            [{copy.nav.cartLabel} / {count}]
+          </span>
+          <button
+            type="button"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
+            className="inline-flex h-12 w-12 items-center justify-center text-ink transition-colors hover:text-brand active:scale-[0.98]"
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={24} strokeWidth={1.75} /> : <Menu size={24} strokeWidth={1.75} />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
         {open ? (
           <motion.div
-            className="fixed inset-0 top-[80px] z-40 h-[calc(100vh-80px)] bg-bg px-6 py-10 md:hidden"
+            className="fixed inset-0 z-40 bg-bg px-6 pb-10 pt-28 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -100,6 +105,7 @@ export function Nav() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setOpen(false)}
                     className={cn(
                       "font-display text-[48px] uppercase leading-[0.95] tracking-[0.02em] text-ink",
                       pathname === link.href && "text-brand underline underline-offset-8",
