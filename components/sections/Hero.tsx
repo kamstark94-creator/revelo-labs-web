@@ -9,7 +9,7 @@ import { experiments } from "@/content/experiments";
 
 export function Hero() {
   const experiment = experiments[0];
-  const labBlack = experiment.colorways[0];
+  const defaultColorway = experiment.colorways[0];
 
   return (
     <section id="hero" className="overflow-hidden pt-[48px] md:pt-[120px]">
@@ -41,7 +41,7 @@ export function Hero() {
         </div>
 
         <MotionRevealItem className="order-2">
-          <ProductIllustration size="hero" colorway={labBlack} imageSrc={experiment.images.hero} alt={experiment.name} />
+          <ProductIllustration size="hero" colorway={defaultColorway} imageSrc={experiment.images.hero} alt={experiment.name} />
         </MotionRevealItem>
       </MotionReveal>
 

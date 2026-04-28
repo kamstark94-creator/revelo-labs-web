@@ -13,7 +13,7 @@ import { useCartStore } from "@/lib/store";
 
 export function Product() {
   const experiment = experiments[0];
-  const [activeSku, setActiveSku] = useState("REV-001-LBK");
+  const [activeSku, setActiveSku] = useState(experiment.colorways[0].sku);
   const addToLab = useCartStore((state) => state.addToLab);
 
   const activeColorway = useMemo(
