@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/sections/Footer";
 import { Nav } from "@/components/sections/Nav";
@@ -49,6 +50,13 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
   return (
     <>
       <Nav />
+      <div className="mx-auto max-w-[1280px] px-6 py-6 font-mono text-[13px] uppercase tracking-[0.05em] md:px-12 lg:px-16">
+        <Link href="/experiments/001" className="text-muted transition-colors hover:text-brand">
+          EXPERIMENTS
+        </Link>
+        <span className="text-muted"> / </span>
+        <span className="text-ink">EXPERIMENT 001 / THE JOGGER</span>
+      </div>
       <main>
         <section className="py-[64px] md:py-[120px]">
           <div className="mx-auto grid max-w-[1280px] gap-12 px-6 md:px-12 lg:grid-cols-12 lg:px-16">
