@@ -6,6 +6,7 @@ import { Method } from "@/components/sections/Method";
 import { MotionGallery } from "@/components/sections/MotionGallery";
 import { Nav } from "@/components/sections/Nav";
 import { Waitlist } from "@/components/sections/Waitlist";
+import { BrandTransition } from "@/components/ui/BrandTransition";
 import { Marquee } from "@/components/ui/Marquee";
 import { copy } from "@/content/copy";
 
@@ -22,15 +23,21 @@ export default function Home() {
         <BuyZone />
         <Marquee text={copy.hero.marquee} />
         <Method />
+        {/* TODO: Replace placeholder with /public/videos/brand-transition-01.mp4
+            Required: 1920×1080px (16:9), MP4 h.264, ≤2MB, 4-6s loop
+            Description: Animated test tube logo — icon filling with lab-green
+            liquid, pulsing, or rotating. Subtle motion, seamless loop */}
+        <BrandTransition label="TEST TUBE TRANSITION / 001" aspect="wide" />
         <MotionGallery />
         <LabNotes />
-        <div className="hidden border-y border-hairline md:block">
-          <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-2 px-6 py-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] md:flex-row md:justify-between md:px-12 md:text-left lg:px-16">
-            <span className="text-muted">CURRENTLY IN LAB →</span>
-            <span className="text-brand">EXPERIMENT 002 / PROTOTYPE 003</span>
-            <span className="text-muted">STATUS: WEAR TESTING</span>
-          </div>
-        </div>
+        {/* TODO: Replace placeholder with /public/videos/brand-motto.mp4
+            Required: 2560×1080px (21:9 cinematic), MP4 h.264, ≤2MB
+            Description: Wide cinematic block with the brand motto in
+            massive type, subtle particle motion or scan-line effect */}
+        <BrandTransition
+          label="LAB MOTTO / ENGINEERED TO STAND OUT"
+          aspect="cinematic"
+        />
         <Waitlist />
       </main>
       <Footer />
