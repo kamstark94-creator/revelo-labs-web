@@ -37,11 +37,6 @@ export function Hero() {
                 {copy.hero.ctaPrimary.label}
               </Button>
             </Link>
-            <Link href={copy.hero.ctaSecondary.href}>
-              <Button className="w-full" variant="secondary" size="lg">
-                {copy.hero.ctaSecondary.label}
-              </Button>
-            </Link>
           </div>
         </MotionRevealItem>
       </MotionReveal>
