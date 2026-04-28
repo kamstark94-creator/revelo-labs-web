@@ -18,7 +18,7 @@ export function LabNoteCard({ note }: { note: LabNote }) {
       {/* TODO: Route this card to /lab-notes/[slug] in v2. */}
       <Link
         href="/lab-notes"
-        className="mt-auto inline-flex pt-8 font-mono text-[13px] uppercase tracking-[0.05em] text-ink"
+        className="mt-auto inline-flex min-h-11 items-center pt-8 font-mono text-[13px] uppercase tracking-[0.05em] text-ink"
       >
         <span className="transition-transform duration-200 group-hover:translate-x-1">READ ENTRY →</span>
       </Link>
@@ -31,13 +31,19 @@ export function LabNotes() {
     <section id="lab-notes" className="py-[64px] md:py-[96px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.labNotes.sectionLabel} />
-        <div className="-mx-6 mt-16 flex snap-x gap-4 overflow-x-auto px-6 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
+        <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
           {labNotes.map((note) => (
-            <div key={note.slug} className="w-[80vw] shrink-0 snap-start md:w-auto">
+            <div key={note.slug}>
               <LabNoteCard note={note} />
             </div>
           ))}
         </div>
+        <Link
+          href="/lab-notes"
+          className="mt-8 inline-flex min-h-11 items-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand md:hidden"
+        >
+          READ ALL LAB NOTES →
+        </Link>
       </div>
     </section>
   );
