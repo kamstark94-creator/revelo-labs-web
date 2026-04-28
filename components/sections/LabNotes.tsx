@@ -6,7 +6,7 @@ import { labNotes, type LabNote } from "@/content/lab-notes";
 
 export function LabNoteCard({ note }: { note: LabNote }) {
   return (
-    <article className="group flex min-h-[320px] flex-col rounded-sm border border-hairline bg-surface p-8 transition-colors duration-200 hover:bg-surface-2">
+    <article className="group flex min-h-[320px] flex-col rounded-sm border border-hairline bg-surface p-6 transition-colors md:p-8 duration-200 hover:bg-surface-2">
       <div className="flex items-center justify-between gap-4">
         <MonoLabel>{note.date}</MonoLabel>
         <MonoLabel accent>{note.category}</MonoLabel>
