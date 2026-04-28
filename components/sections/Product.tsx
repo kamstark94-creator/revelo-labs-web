@@ -11,6 +11,15 @@ import { experiments } from "@/content/experiments";
 import { cn } from "@/lib/cn";
 import { useCartStore } from "@/lib/store";
 
+const pipingLabel = (hex: string): string => {
+  const labels: Record<string, string> = {
+    "#39FF14": "LAB-GREEN",
+    "#F4F2EE": "WHITE",
+  };
+
+  return labels[hex] ?? hex.toUpperCase();
+};
+
 export function Product() {
   const experiment = experiments[0];
   const [activeSku, setActiveSku] = useState(experiment.colorways[0].sku);
@@ -32,7 +41,7 @@ export function Product() {
     ["FABRIC", experiment.specs.fabric],
     ["FIT", experiment.specs.fit],
     ["PANELS", String(experiment.specs.panels)],
-    ["PIPING", experiment.specs.piping],
+    ["PIPING", pipingLabel(activeColorway.pipingHex)],
     ["WEIGHT", experiment.specs.weight],
     ["CARE", experiment.specs.care],
     ["ORIGIN", experiment.specs.origin],
