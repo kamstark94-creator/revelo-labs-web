@@ -12,8 +12,41 @@ export function Hero() {
   const defaultColorway = experiment.colorways[0];
 
   return (
-    <section id="hero" className="overflow-hidden pt-[48px] md:pt-[120px]">
-      <MotionReveal className="mx-auto grid max-w-[1280px] gap-12 px-6 pb-[48px] md:px-12 md:pb-[64px] lg:grid-cols-[1fr_minmax(0,500px)] lg:gap-16 lg:px-16">
+    <section id="hero" className="overflow-hidden pt-[64px] md:pt-[120px]">
+      <MotionReveal className="mx-auto flex max-w-[1280px] flex-col gap-8 px-6 pb-[64px] md:hidden">
+        <MotionRevealItem>
+          <MonoLabel accent>{copy.hero.kicker}</MonoLabel>
+        </MotionRevealItem>
+        <MotionRevealItem>
+          <ProductIllustration size="hero" colorway={defaultColorway} imageSrc={experiment.images.hero} alt={experiment.name} />
+        </MotionRevealItem>
+        <MotionRevealItem>
+          <h1 className="font-display text-[44px] uppercase leading-[0.92] tracking-[0.02em] text-ink">
+            {copy.hero.headline}
+          </h1>
+        </MotionRevealItem>
+        <MotionRevealItem>
+          <p className="max-w-[480px] text-[17px] leading-[1.6] text-body">
+            {copy.hero.sub}
+          </p>
+        </MotionRevealItem>
+        <MotionRevealItem>
+          <div className="flex flex-col gap-4">
+            <Link href={copy.hero.ctaPrimary.href}>
+              <Button className="w-full" variant="primary" size="lg">
+                {copy.hero.ctaPrimary.label}
+              </Button>
+            </Link>
+            <Link href={copy.hero.ctaSecondary.href}>
+              <Button className="w-full" variant="secondary" size="lg">
+                {copy.hero.ctaSecondary.label}
+              </Button>
+            </Link>
+          </div>
+        </MotionRevealItem>
+      </MotionReveal>
+
+      <MotionReveal className="mx-auto hidden max-w-[1280px] gap-12 px-6 pb-[48px] md:grid md:px-12 md:pb-[64px] lg:grid-cols-[1fr_minmax(0,500px)] lg:gap-16 lg:px-16">
         <div className="order-1">
           <MotionRevealItem>
             <MonoLabel accent>{copy.hero.kicker}</MonoLabel>
@@ -31,10 +64,14 @@ export function Hero() {
           <MotionRevealItem>
             <div className="mt-12 flex flex-col gap-4 sm:flex-row">
               <Link href={copy.hero.ctaPrimary.href}>
-                <Button className="w-full sm:w-auto" variant="primary" size="lg">{copy.hero.ctaPrimary.label}</Button>
+                <Button className="w-full sm:w-auto" variant="primary" size="lg">
+                  {copy.hero.ctaPrimary.label}
+                </Button>
               </Link>
               <Link href={copy.hero.ctaSecondary.href}>
-                <Button className="w-full sm:w-auto" variant="secondary" size="lg">{copy.hero.ctaSecondary.label}</Button>
+                <Button className="w-full sm:w-auto" variant="secondary" size="lg">
+                  {copy.hero.ctaSecondary.label}
+                </Button>
               </Link>
             </div>
           </MotionRevealItem>
