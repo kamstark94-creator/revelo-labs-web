@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
@@ -51,28 +52,39 @@ export function Waitlist() {
         </MotionRevealItem>
 
         <MotionRevealItem>
-          {submitted ? (
-            <p className="mx-auto mt-10 max-w-[560px] border border-hairline bg-surface px-4 py-4 font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
-              {copy.waitlist.success}
-            </p>
-          ) : (
-            <form
-              onSubmit={handleWaitlist}
-              className="mx-auto mt-8 flex max-w-[620px] flex-col justify-center gap-3 md:flex-row"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder={copy.waitlist.placeholder}
-                aria-label="Email address"
-                className="min-h-12 flex-1 border border-hairline bg-surface px-4 py-3 font-mono text-[16px] text-ink outline-none transition-colors placeholder:text-muted focus:border-brand md:max-w-[400px] md:text-[14px]"
-              />
-              <Button type="submit" variant="primary" size="lg">
-                {copy.waitlist.cta}
-              </Button>
-            </form>
-          )}
+          <AnimatePresence mode="wait">
+            {submitted ? (
+              <motion.p
+                key="success"
+                className="mx-auto mt-10 max-w-[560px] border border-hairline bg-surface px-4 py-4 font-mono text-[13px] uppercase tracking-[0.05em] text-brand"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                {copy.waitlist.success}
+              </motion.p>
+            ) : (
+              <motion.form
+                key="form"
+                onSubmit={handleWaitlist}
+                className="mx-auto mt-8 flex max-w-[620px] flex-col justify-center gap-3 md:flex-row"
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder={copy.waitlist.placeholder}
+                  aria-label="Email address"
+                  className="min-h-12 flex-1 border border-hairline bg-surface px-4 py-3 font-mono text-[16px] text-ink outline-none transition-colors placeholder:text-muted focus:border-brand md:max-w-[400px] md:text-[14px]"
+                />
+                <Button type="submit" variant="primary" size="lg">
+                  {copy.waitlist.cta}
+                </Button>
+              </motion.form>
+            )}
+          </AnimatePresence>
 
           {error ? (
             <p className="mt-4 font-mono text-[12px] uppercase tracking-[0.05em] text-brand">
