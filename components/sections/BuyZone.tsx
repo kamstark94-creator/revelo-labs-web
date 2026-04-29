@@ -128,9 +128,6 @@ export function BuyZone() {
           );
         })}
       </div>
-      <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.05em] text-brand lg:hidden">
-        TAP TO SELECT
-      </p>
     </div>
   );
 
