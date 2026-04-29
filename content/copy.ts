@@ -12,7 +12,7 @@ export const copy = {
     cartLabel: "LAB",
   },
   hero: {
-    kicker: `${experiment.fullLabel} / 5 COLORWAYS / LAUNCHED 04.2026`,
+    kicker: experiment.fullLabel,
     headline: "ENGINEERED TO STAND OUT.",
     sub: "We don't release products. We release experiments. Experiment 001 is the first garment out of the lab — documented, iterated, and worn.",
     ctaPrimary: { label: "ENTER THE LAB", href: "/experiments/001" },
