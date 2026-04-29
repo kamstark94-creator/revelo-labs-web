@@ -3,12 +3,35 @@ import { body, display, mono } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://revelo-labs-web.vercel.app"),
   title: "Revelo Labs",
   description: "Experiment-led athletic apparel from Revelo Labs.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
+  },
+  openGraph: {
+    title: "Revelo Labs — Experiment 001",
+    description: "We don't release products. We release experiments.",
+    url: "https://revelo-labs-web.vercel.app",
+    siteName: "Revelo Labs",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Revelo Labs — Engineered to stand out.",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Revelo Labs — Experiment 001",
+    description: "We don't release products. We release experiments.",
+    images: ["/images/og-image.png"],
   },
 };
 

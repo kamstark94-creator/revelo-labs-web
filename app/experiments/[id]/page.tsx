@@ -24,6 +24,28 @@ const metaLabel = experiment.fullLabel
 
 export const metadata: Metadata = {
   title: metaLabel + " | Revelo Labs",
+  openGraph: {
+    title: "Experiment 001 / The Jogger — Revelo Labs",
+    description: "We don't release products. We release experiments.",
+    url: "https://revelo-labs-web.vercel.app/experiments/001",
+    siteName: "Revelo Labs",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Revelo Labs — Engineered to stand out.",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Experiment 001 / The Jogger — Revelo Labs",
+    description: "We don't release products. We release experiments.",
+    images: ["/images/og-image.png"],
+  },
 };
 
 export function generateStaticParams() {
@@ -141,8 +163,8 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
                     THE NEXT EXPERIMENT DROPS IN MOTION.
                   </h2>
                   <p className="mt-5 text-[15px] leading-[1.6] text-body">
-                    Wear-testing now. Development sample 003. Get on the list for
-                    early access.
+                    Wear-testing now. Development sample 003. Get on the list
+                    for early access.
                   </p>
                   <Link href="/#waitlist" className="mt-auto flex pt-8">
                     <Button className="w-full" variant="primary" size="lg">
