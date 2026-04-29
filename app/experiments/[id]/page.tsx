@@ -10,20 +10,10 @@ import { Button } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { MotionReveal, MotionRevealItem } from "@/components/ui/MotionReveal";
 import { SectionDivider } from "@/components/ui/SectionDivider";
-import { experiments } from "@/content/experiments";
 import { labNotes } from "@/content/lab-notes";
 
-const experiment = experiments[0];
-
-const titleCase = (value: string): string =>
-  value.toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase());
-
-const metaLabel = experiment.fullLabel
-  .replace("EXPERIMENT", "Experiment")
-  .replace(experiment.name, titleCase(experiment.name));
-
 export const metadata: Metadata = {
-  title: metaLabel + " | Revelo Labs",
+  title: "Revelo Labs",
   openGraph: {
     title: "Experiment 001 / The Jogger — Revelo Labs",
     description: "We don't release products. We release experiments.",

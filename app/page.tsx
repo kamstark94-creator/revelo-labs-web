@@ -11,7 +11,7 @@ import { Marquee } from "@/components/ui/Marquee";
 import { copy } from "@/content/copy";
 
 export const metadata: Metadata = {
-  title: "Revelo Labs — Experiment 001",
+  title: "Revelo Labs",
   description: copy.hero.sub,
 };
 

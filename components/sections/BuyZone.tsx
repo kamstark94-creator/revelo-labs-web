@@ -240,7 +240,7 @@ export function BuyZone() {
   return (
     <section
       id="hero"
-      className="pb-[32px] pt-[88px] md:pb-[80px] md:pt-[104px]"
+      className="pb-[32px] pt-[24px] md:pb-[80px] md:pt-[40px]"
     >
       <MotionReveal className="mx-auto grid max-w-[1280px] gap-10 px-6 md:px-12 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:px-16">
         <div>
