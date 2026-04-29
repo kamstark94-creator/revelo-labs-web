@@ -76,14 +76,22 @@ export function BuyZone() {
               onClick={() => setActiveSku(colorway.sku)}
             >
               <span className="relative flex h-[52px] w-[52px] items-center justify-center md:h-14 md:w-14">
-                <span
-                  className={cn(
-                    "absolute -inset-[6px] rounded-full border-2 transition-colors duration-200",
-                    active
-                      ? "border-brand"
-                      : "group-focus-visible:border-brand/60 border-transparent",
+                <AnimatePresence>
+                  {active ? (
+                    <motion.span
+                      key="ring"
+                      className="absolute -inset-[6px] rounded-full border-2 border-brand"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    />
+                  ) : (
+                    <span
+                      className="absolute -inset-[6px] rounded-full border-2 border-transparent group-focus-visible:border-brand/60"
+                    />
                   )}
-                />
+                </AnimatePresence>
                 <span
                   className={cn(
                     "relative h-10 w-10 overflow-hidden rounded-full border [--swatch-scan-distance:40px] md:h-11 md:w-11 md:[--swatch-scan-distance:44px]",
