@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { ProductIllustration } from "@/components/brand/ProductIllustration";
 import { Button } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
+import { MotionReveal, MotionRevealItem } from "@/components/ui/MotionReveal";
 import { SpecRow } from "@/components/ui/SpecRow";
 import { copy } from "@/content/copy";
 import { experiments } from "@/content/experiments";
@@ -226,24 +227,38 @@ export function BuyZone() {
 
   return (
     <section id="hero" className="py-[32px] md:py-[80px]">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-6 md:grid-cols-[1fr_1fr] md:gap-12 md:px-12 lg:px-16">
+      <MotionReveal className="mx-auto grid max-w-[1280px] gap-10 px-6 md:grid-cols-[1fr_1fr] md:gap-12 md:px-12 lg:px-16">
         <div>
-          <MonoLabel accent>{copy.hero.kicker}</MonoLabel>
-          <div className="mt-6">{colorwaySelector}</div>
-          {activePhoto}
+          <MotionRevealItem>
+            <MonoLabel accent>{copy.hero.kicker}</MonoLabel>
+          </MotionRevealItem>
+          <MotionRevealItem>
+            <div className="mt-6">{colorwaySelector}</div>
+          </MotionRevealItem>
+          <MotionRevealItem>
+            {activePhoto}
+          </MotionRevealItem>
         </div>
 
         <div className="md:pt-8">
-          <h1 className="font-display text-[44px] uppercase leading-[0.92] tracking-[0.02em] text-ink md:text-[80px] lg:text-[96px]">
-            {copy.hero.headline}
-          </h1>
-          <p className="mt-6 max-w-[520px] text-[17px] leading-[1.6] text-body md:text-[18px]">
-            {copy.hero.sub}
-          </p>
-          {actionZone}
-          {specSheet}
+          <MotionRevealItem>
+            <h1 className="font-display text-[44px] uppercase leading-[0.92] tracking-[0.02em] text-ink md:text-[80px] lg:text-[96px]">
+              {copy.hero.headline}
+            </h1>
+          </MotionRevealItem>
+          <MotionRevealItem>
+            <p className="mt-6 max-w-[520px] text-[17px] leading-[1.6] text-body md:text-[18px]">
+              {copy.hero.sub}
+            </p>
+          </MotionRevealItem>
+          <MotionRevealItem>
+            {actionZone}
+          </MotionRevealItem>
+          <MotionRevealItem>
+            {specSheet}
+          </MotionRevealItem>
         </div>
-      </div>
+      </MotionReveal>
     </section>
   );
 }
