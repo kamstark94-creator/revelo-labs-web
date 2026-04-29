@@ -4,7 +4,7 @@ import { copy } from "@/content/copy";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-6 text-center">
+    <main id="main" className="flex min-h-screen items-center justify-center px-6 text-center">
       <div>
         <h1 className="font-display text-[56px] uppercase leading-[0.95] tracking-[0.02em] text-ink md:text-[96px]">
           {copy.notFound.headline}

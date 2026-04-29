@@ -31,7 +31,7 @@ export default function LegalPage({ params }: LegalPageProps) {
   return (
     <>
       <Nav />
-      <main className="py-[64px] md:py-[120px]">
+      <main id="main" className="py-[64px] md:py-[120px]">
         <div className="mx-auto max-w-[680px] px-6 md:px-0">
           <h1 className="font-display text-[56px] uppercase leading-[0.95] tracking-[0.02em] text-ink md:text-[80px]">
             {legalPages[params.slug]}

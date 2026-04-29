@@ -43,7 +43,7 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
   return (
     <>
       <Nav />
-      <main>
+      <main id="main">
         <BuyZone />
 
         <section className="pb-[64px] md:pb-[120px]">

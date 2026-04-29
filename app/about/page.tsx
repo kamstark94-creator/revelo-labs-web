@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
-      <main className="py-[64px] md:py-[120px]">
+      <main id="main" className="py-[64px] md:py-[120px]">
         <article className="mx-auto max-w-[680px] px-6 md:px-0">
           <MonoLabel accent>ABOUT / REVELO LABS</MonoLabel>
           <h1 className="mt-8 font-display text-[36px] uppercase leading-[0.95] tracking-[0.02em] text-ink md:text-[80px]">

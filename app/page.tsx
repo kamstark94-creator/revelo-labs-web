@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="flex flex-col">
+      <main id="main" className="flex flex-col">
         <BuyZone />
         <Marquee text={copy.hero.marquee} />
         <Method />
