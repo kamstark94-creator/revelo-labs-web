@@ -133,7 +133,7 @@ export function BuyZone() {
 
   const activePhoto = (
     <div>
-      <div className="relative z-0 mt-6 flex max-h-[60vh] w-full items-center justify-center md:mt-8 md:max-h-[600px]">
+      <div className="relative z-0 mt-3 flex max-h-[60vh] w-full items-center justify-center md:mt-8 md:max-h-[600px]">
         <ProductIllustration
           colorway={activeColorway}
           size="hero"
@@ -242,7 +242,7 @@ export function BuyZone() {
             <MonoLabel accent>{copy.hero.kicker}</MonoLabel>
           </MotionRevealItem>
           <MotionRevealItem>
-            <div className="mt-6">{colorwaySelector}</div>
+            <div className="mt-4 md:mt-6">{colorwaySelector}</div>
           </MotionRevealItem>
           <MotionRevealItem>{activePhoto}</MotionRevealItem>
         </div>
