@@ -48,7 +48,7 @@ export default function RootLayout({
       <body className="font-body">
         <a
           href="#main"
-          className="fixed left-4 top-4 z-[100] -translate-y-full rounded-sm bg-brand px-4 py-2 font-mono text-[13px] uppercase tracking-[0.05em] text-bg transition-transform focus:translate-y-0"
+          className="fixed left-4 top-0 z-[100] -translate-y-[calc(100%+8px)] rounded-sm bg-brand px-4 py-2 font-mono text-[13px] uppercase tracking-[0.05em] text-bg transition-transform focus:translate-y-4"
         >
           SKIP TO CONTENT
         </a>

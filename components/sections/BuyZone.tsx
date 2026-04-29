@@ -86,12 +86,14 @@ export function BuyZone() {
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       exit={{ scale: 0.8, opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                      }}
                     />
                   ) : (
-                    <span
-                      className="absolute -inset-[6px] rounded-full border-2 border-transparent group-focus-visible:border-brand/60"
-                    />
+                    <span className="group-focus-visible:border-brand/60 absolute -inset-[6px] rounded-full border-2 border-transparent" />
                   )}
                 </AnimatePresence>
                 <span
@@ -126,7 +128,7 @@ export function BuyZone() {
           );
         })}
       </div>
-      <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.05em] text-brand md:hidden">
+      <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.05em] text-brand lg:hidden">
         TAP TO SELECT
       </p>
     </div>
@@ -194,7 +196,7 @@ export function BuyZone() {
     <div id="spec" className="mt-8 border-t border-hairline pt-6">
       <button
         type="button"
-        className="flex min-h-12 w-full items-center justify-between gap-4 font-mono text-[13px] uppercase tracking-[0.05em] text-brand md:hidden"
+        className="flex min-h-12 w-full items-center justify-between gap-4 font-mono text-[13px] uppercase tracking-[0.05em] text-brand lg:hidden"
         onClick={() => setSpecOpen((open) => !open)}
         aria-expanded={specOpen}
       >
@@ -215,14 +217,14 @@ export function BuyZone() {
           />
         )}
       </button>
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <MonoLabel>{copy.product.specHeading}</MonoLabel>
         {specRowsContent}
       </div>
       <AnimatePresence initial={false}>
         {specOpen ? (
           <motion.div
-            className="overflow-hidden md:hidden"
+            className="overflow-hidden lg:hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -236,8 +238,11 @@ export function BuyZone() {
   );
 
   return (
-    <section id="hero" className="pt-[88px] pb-[32px] md:pt-[104px] md:pb-[80px]">
-      <MotionReveal className="mx-auto grid max-w-[1280px] gap-10 px-6 md:grid-cols-[1fr_1fr] md:gap-12 md:px-12 lg:px-16">
+    <section
+      id="hero"
+      className="pb-[32px] pt-[88px] md:pb-[80px] md:pt-[104px]"
+    >
+      <MotionReveal className="mx-auto grid max-w-[1280px] gap-10 px-6 md:px-12 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:px-16">
         <div>
           <MotionRevealItem>
             <MonoLabel accent>{copy.hero.kicker}</MonoLabel>
@@ -245,26 +250,29 @@ export function BuyZone() {
           <MotionRevealItem>
             <div className="mt-6">{colorwaySelector}</div>
           </MotionRevealItem>
-          <MotionRevealItem>
-            {activePhoto}
-          </MotionRevealItem>
+          <MotionRevealItem>{activePhoto}</MotionRevealItem>
         </div>
 
-        <div className="md:pt-8">
-          <MotionRevealItem>
-            <h1 className="font-display text-[44px] uppercase leading-[0.92] tracking-[0.02em] text-ink md:text-[80px] lg:text-[96px]">
-              {copy.hero.headline}
+        <div className="flex flex-col lg:block lg:pt-8">
+          <MotionRevealItem className="order-2 lg:order-none">
+            <h1 className="font-display text-[40px] uppercase leading-[0.92] tracking-[0.02em] text-ink min-[390px]:text-[42px] lg:text-[80px] xl:text-[96px]">
+              <span className="lg:hidden">
+                ENGINEERED TO
+                <br />
+                STAND OUT.
+              </span>
+              <span className="hidden lg:inline">{copy.hero.headline}</span>
             </h1>
           </MotionRevealItem>
-          <MotionRevealItem>
+          <MotionRevealItem className="order-3 lg:order-none">
             <p className="mt-6 max-w-[520px] text-[17px] leading-[1.6] text-body md:text-[18px]">
               {copy.hero.sub}
             </p>
           </MotionRevealItem>
-          <MotionRevealItem>
+          <MotionRevealItem className="order-1 lg:order-none">
             {actionZone}
           </MotionRevealItem>
-          <MotionRevealItem>
+          <MotionRevealItem className="order-4 lg:order-none">
             {specSheet}
           </MotionRevealItem>
         </div>

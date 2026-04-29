@@ -57,15 +57,11 @@ export function ProductIllustration({
 }: ProductIllustrationProps) {
   const wrapperClass = cn(
     "relative mx-auto flex aspect-[2/3] w-full items-center justify-center",
-    size === "hero" ? "max-w-[500px]" : "max-w-[420px]",
+    size === "hero"
+      ? "max-h-[54vh] max-w-[500px] lg:max-h-[600px]"
+      : "max-h-[280px] max-w-[420px] md:max-h-none",
   );
   const resolvedImage = colorway.image ?? imageSrc;
-  const imageClass = cn(
-    "h-auto w-auto max-w-full object-contain md:w-full",
-    size === "product"
-      ? "max-h-[280px] md:max-h-none"
-      : "max-h-[60vh] md:max-h-[600px]",
-  );
 
   if (resolvedImage) {
     return (
@@ -77,10 +73,9 @@ export function ProductIllustration({
               ? "Revelo Labs " + colorway.name + " — Experiment 001"
               : alt
           }
-          width={400}
-          height={600}
-          className={imageClass}
-          style={{ width: "auto", height: "auto" }}
+          fill
+          sizes={size === "hero" ? "(min-width: 1024px) 500px, 100vw" : "420px"}
+          className="object-contain"
           priority={size === "hero"}
         />
         <div className="border-brand/40 absolute right-4 top-4 border px-2 py-1 font-mono text-[11px] uppercase tracking-[0.05em] text-brand">
