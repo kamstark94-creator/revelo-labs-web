@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MonoLabel } from "@/components/ui/MonoLabel";
+import { MotionReveal, MotionRevealItem } from "@/components/ui/MotionReveal";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { copy } from "@/content/copy";
 import { labNotes, type LabNote } from "@/content/lab-notes";
@@ -35,13 +36,18 @@ export function LabNotes() {
     <section id="lab-notes" className="py-[56px] md:py-[72px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.labNotes.sectionLabel} />
-        <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+        <MotionReveal
+          mode="view"
+          once
+          viewportMargin="-100px"
+          className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6"
+        >
           {labNotes.map((note) => (
-            <div key={note.slug}>
+            <MotionRevealItem key={note.slug}>
               <LabNoteCard note={note} />
-            </div>
+            </MotionRevealItem>
           ))}
-        </div>
+        </MotionReveal>
         <Link
           href="/lab-notes"
           className="mt-8 inline-flex min-h-11 items-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand md:hidden"
