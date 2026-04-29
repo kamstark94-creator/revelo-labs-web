@@ -60,6 +60,7 @@ export function BuyZone() {
     <div>
       <div
         className="relative z-20 flex items-start gap-3"
+        role="radiogroup"
         aria-label="Select colorway"
       >
         {experiment.colorways.map((colorway) => {
@@ -70,8 +71,9 @@ export function BuyZone() {
             <button
               key={colorway.sku}
               type="button"
-              aria-label={"Select " + colorway.name}
-              aria-pressed={active}
+              role="radio"
+              aria-label={colorway.name}
+              aria-checked={active}
               className="group flex min-w-11 shrink-0 cursor-pointer flex-col items-center text-center focus-visible:outline-none active:scale-[0.98]"
               onClick={() => setActiveSku(colorway.sku)}
             >
