@@ -21,12 +21,12 @@ export function Logo({ variant = "full", className }: LogoProps) {
 
   return (
     <Image
-      src="/images/revelo-logo-full.png"
+      src="/images/revelo-logo1-full.png"
       alt="Revelo Labs"
-      width={240}
-      height={60}
+      width={640}
+      height={160}
       priority
-      className={cn("h-8 w-auto md:h-10", className)}
+      className={cn("h-10 w-auto", className)}
     />
   );
 }
