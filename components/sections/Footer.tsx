@@ -15,7 +15,13 @@ export function Footer() {
         <MotionRevealItem>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
             <div className="md:col-span-2 lg:col-span-1">
-              <Logo variant="full" />
+              <Link
+                href="/"
+                aria-label="Revelo Labs home"
+                className="inline-flex"
+              >
+                <Logo variant="full" />
+              </Link>
               <p className="mt-6 font-mono text-[13px] uppercase tracking-[0.05em] text-muted">
                 {copy.footer.tagline}
               </p>
@@ -29,7 +35,10 @@ export function Footer() {
                 <ul className="mt-5 space-y-3">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href} className="inline-flex min-h-11 items-center text-ink transition-colors hover:text-brand active:text-brand">
+                      <Link
+                        href={link.href}
+                        className="inline-flex min-h-11 items-center text-ink transition-colors hover:text-brand active:text-brand"
+                      >
                         {link.label}
                       </Link>
                     </li>
