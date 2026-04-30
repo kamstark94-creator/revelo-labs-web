@@ -3,15 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0a0a0b;
-  --surface: #141416;
-  --surface-2: #1a1a1d;
+  --bg: #070807;
+  --bg-rgb: 7 8 7;
+  --surface: #101410;
+  --surface-rgb: 16 20 16;
+  --surface-2: #151b15;
+  --surface-2-rgb: 21 27 21;
+  --surface-3: #1d241d;
+  --surface-3-rgb: 29 36 29;
   --ink: #f4f2ee;
+  --ink-rgb: 244 242 238;
   --body: #a8a8ac;
+  --body-rgb: 168 168 172;
   --muted: #8a8a90;
-  --hairline: #2a2a2e;
+  --muted-rgb: 138 138 144;
+  --sage: #6f7b68;
+  --sage-rgb: 111 123 104;
+  --blush: #ffd3ce;
+  --blush-rgb: 255 211 206;
+  --hairline: #263026;
+  --hairline-rgb: 38 48 38;
   --brand: #39ff14;
+  --brand-rgb: 57 255 20;
   --brand-dim: #1fa82a;
+  --brand-dim-rgb: 31 168 42;
 }
 
 * {
@@ -23,10 +38,25 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background:
+    linear-gradient(180deg, rgba(57, 255, 20, 0.035), transparent 320px),
+    linear-gradient(180deg, #070807 0%, #0a0a0b 42%, #070807 100%);
   color: var(--ink);
   font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  pointer-events: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(244, 242, 238, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 242, 238, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 72%);
 }
 
 a {

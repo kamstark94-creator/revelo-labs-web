@@ -7,7 +7,7 @@ import { labNotes, type LabNote } from "@/content/lab-notes";
 
 export function LabNoteCard({ note }: { note: LabNote }) {
   return (
-    <article className="group flex min-h-[320px] flex-col rounded-sm border border-hairline bg-surface p-6 transition-colors duration-200 hover:bg-surface-2 md:p-8">
+    <article className="group flex min-h-[320px] flex-col rounded-[8px] border border-hairline bg-surface p-6 shadow-[inset_0_1px_0_rgba(244,242,238,0.04)] transition-colors duration-200 hover:bg-surface-2 md:p-7">
       <div className="flex items-center justify-between gap-4">
         <MonoLabel>{note.date}</MonoLabel>
         <MonoLabel accent>{note.category}</MonoLabel>
@@ -21,7 +21,7 @@ export function LabNoteCard({ note }: { note: LabNote }) {
       {/* TODO: Route this card to /lab-notes/[slug] in v2. */}
       <Link
         href="/lab-notes"
-        className="mt-auto inline-flex min-h-11 items-center pt-8 font-mono text-[13px] uppercase tracking-[0.05em] text-ink"
+        className="mt-auto inline-flex min-h-11 items-center pt-8 font-mono text-[13px] uppercase tracking-[0.05em] text-ink transition-colors duration-200 hover:text-brand"
       >
         <span className="transition-transform duration-200 group-hover:translate-x-1">
           READ ENTRY →
@@ -33,14 +33,14 @@ export function LabNoteCard({ note }: { note: LabNote }) {
 
 export function LabNotes() {
   return (
-    <section id="lab-notes" className="py-[56px] md:py-[72px]">
+    <section id="lab-notes" className="py-[44px] md:py-[72px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <SectionDivider label={copy.labNotes.sectionLabel} />
         <MotionReveal
           mode="view"
           once
           viewportMargin="-100px"
-          className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6"
+          className="mt-8 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-3 md:gap-5"
         >
           {labNotes.map((note) => (
             <MotionRevealItem key={note.slug}>

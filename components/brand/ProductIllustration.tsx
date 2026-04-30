@@ -18,6 +18,7 @@ type ProductIllustrationProps = {
   size?: "hero" | "product";
   imageSrc?: string | null;
   alt?: string;
+  className?: string;
 };
 
 type PhotoCallout = {
@@ -54,12 +55,14 @@ export function ProductIllustration({
   size = "product",
   imageSrc = null,
   alt = colorway.name,
+  className,
 }: ProductIllustrationProps) {
   const wrapperClass = cn(
     "relative mx-auto flex aspect-[2/3] w-full items-center justify-center",
     size === "hero"
-      ? "max-h-[54vh] max-w-[500px] lg:max-h-[600px]"
+      ? "max-h-[44vh] max-w-[380px] md:max-h-[560px] md:max-w-[500px] lg:max-h-[620px]"
       : "max-h-[280px] max-w-[420px] md:max-h-none",
+    className,
   );
   const resolvedImage = colorway.image ?? imageSrc;
 
@@ -75,13 +78,13 @@ export function ProductIllustration({
           }
           fill
           sizes={size === "hero" ? "(min-width: 1024px) 500px, 100vw" : "420px"}
-          className="object-contain"
+          className="object-contain drop-shadow-[0_18px_44px_rgba(0,0,0,0.4)]"
           priority={size === "hero"}
         />
-        <div className="border-brand/40 absolute right-4 top-4 border px-2 py-1 font-mono text-[11px] uppercase tracking-[0.05em] text-brand">
+        <div className="border-brand/35 bg-bg/75 absolute right-2 top-2 rounded-[4px] border px-2 py-1 font-mono text-[9px] uppercase tracking-[0.05em] text-brand shadow-[inset_0_1px_0_rgba(244,242,238,0.08)] md:right-4 md:top-4 md:text-[11px]">
           LAB SAMPLE / 001
         </div>
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 hidden lg:block">
           <svg
             aria-hidden="true"
             className="absolute inset-0 h-full w-full"

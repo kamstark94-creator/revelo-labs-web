@@ -46,6 +46,29 @@ type ExperimentPageProps = {
   params: { id: string };
 };
 
+const constructionDetails = [
+  {
+    label: "DETAIL_01",
+    title: "Bonded seam",
+    body: "Clean panel joins with hard side-lighting and no visible thread line.",
+  },
+  {
+    label: "DETAIL_02",
+    title: "Motion gusset",
+    body: "Angular integration through the inner thigh for directional movement.",
+  },
+  {
+    label: "DETAIL_03",
+    title: "Cuff + piping",
+    body: "Elastic recovery mapped against the contrast line at the lower leg.",
+  },
+  {
+    label: "DETAIL_04",
+    title: "Zipper pocket",
+    body: "Concealed hardware, angled access, and controlled fabric tension.",
+  },
+] as const;
+
 export default function ExperimentPage({ params }: ExperimentPageProps) {
   if (params.id !== "001") {
     notFound();
@@ -68,61 +91,27 @@ export default function ExperimentPage({ params }: ExperimentPageProps) {
               viewportMargin="-100px"
               className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
             >
-              {/* TODO: Replace with /public/images/detail-01.jpg
-                  Required: 1200×1200px (1:1 square), JPG/PNG
-                  Description: Macro shot of bonded seam where two
-                  panels join — fabric texture, hard side lighting,
-                  no thread visible (bonded edge) */}
-              <MotionRevealItem>
-                <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
-                  <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
-                    DETAIL_01 / BONDED SEAM
-                  </div>
-                </div>
-              </MotionRevealItem>
-
-              {/* TODO: Replace with /public/images/detail-02.jpg
-                  Required: 1200×1200px (1:1 square), JPG/PNG
-                  Description: Inner thigh motion gusset — angular
-                  shot showing panel shape and integration with
-                  surrounding fabric */}
-              <MotionRevealItem>
-                <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
-                  <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
-                    DETAIL_02 / MOTION GUSSET
-                  </div>
-                </div>
-              </MotionRevealItem>
-
-              {/* TODO: Replace with /public/images/detail-03.jpg
-                  Required: 1200×1200px (1:1 square), JPG/PNG
-                  Description: Bottom cuff close-up — elastic ribbing,
-                  piping line (white on Lab Violet, lab-green on
-                  others), visible fabric weave */}
-              <MotionRevealItem>
-                <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
-                  <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
-                    DETAIL_03 / CUFF + PIPING
-                  </div>
-                </div>
-              </MotionRevealItem>
-
-              {/* TODO: Replace with /public/images/detail-04.jpg
-                  Required: 1200×1200px (1:1 square), JPG/PNG
-                  Description: Macro of zipper pocket — zipper pull
-                  sharp, hardware visible, surrounding fabric slightly
-                  soft */}
-              <MotionRevealItem>
-                <div className="relative aspect-square overflow-hidden border border-hairline bg-surface">
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px)] bg-[length:100%_8px]" />
-                  <div className="absolute inset-0 flex items-center justify-center px-6 text-center font-mono text-[13px] uppercase tracking-[0.05em] text-brand">
-                    DETAIL_04 / ZIPPER POCKET
-                  </div>
-                </div>
-              </MotionRevealItem>
+              {constructionDetails.map((detail) => (
+                <MotionRevealItem key={detail.label}>
+                  <article className="relative aspect-square overflow-hidden rounded-[8px] border border-hairline bg-surface shadow-[inset_0_1px_0_rgba(244,242,238,0.04)]">
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(244,242,238,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(244,242,238,0.035)_1px,transparent_1px)] bg-[length:100%_10px,52px_100%]" />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(57,255,20,0.1),transparent_30%),linear-gradient(180deg,transparent,rgba(0,0,0,0.76))]" />
+                    <div className="absolute left-5 right-5 top-5 flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.05em] text-muted">
+                      <span>{detail.label}</span>
+                      <span className="text-brand">EXP-001</span>
+                    </div>
+                    <div className="bg-brand/60 absolute left-5 top-1/2 h-px w-24" />
+                    <div className="absolute bottom-5 left-5 right-5">
+                      <h3 className="font-display text-[30px] uppercase leading-none tracking-[0.02em] text-ink md:text-[44px]">
+                        {detail.title}
+                      </h3>
+                      <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-body">
+                        {detail.body}
+                      </p>
+                    </div>
+                  </article>
+                </MotionRevealItem>
+              ))}
             </MotionReveal>
           </div>
         </section>

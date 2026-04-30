@@ -29,12 +29,12 @@ export function Waitlist() {
   }
 
   return (
-    <section id="waitlist" className="py-[72px] md:py-[100px]">
+    <section id="waitlist" className="px-3 py-[56px] md:px-6 md:py-[88px]">
       <MotionReveal
         mode="view"
         once
         viewportMargin="-100px"
-        className="mx-auto max-w-[1280px] px-6 text-center md:px-12 lg:px-16"
+        className="mx-auto max-w-[1280px] rounded-[8px] border border-hairline bg-[linear-gradient(180deg,rgba(21,27,21,0.92),rgba(7,8,7,0.88))] px-5 py-10 text-center shadow-[inset_0_1px_0_rgba(244,242,238,0.04)] md:px-12 md:py-14 lg:px-16"
       >
         <MotionRevealItem>
           <div className="md:hidden">
@@ -56,7 +56,7 @@ export function Waitlist() {
             {submitted ? (
               <motion.p
                 key="success"
-                className="mx-auto mt-10 max-w-[560px] border border-hairline bg-surface px-4 py-4 font-mono text-[13px] uppercase tracking-[0.05em] text-brand"
+                className="mx-auto mt-10 max-w-[560px] rounded-[8px] border border-hairline bg-surface px-4 py-4 font-mono text-[13px] uppercase tracking-[0.05em] text-brand"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
@@ -77,7 +77,7 @@ export function Waitlist() {
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder={copy.waitlist.placeholder}
                   aria-label="Email address"
-                  className="min-h-12 flex-1 border border-hairline bg-surface px-4 py-3 font-mono text-[16px] text-ink outline-none transition-colors placeholder:text-muted focus:border-brand md:max-w-[400px] md:text-[14px]"
+                  className="min-h-12 flex-1 rounded-[6px] border border-hairline bg-surface px-4 py-3 font-mono text-[16px] text-ink outline-none transition-colors placeholder:text-muted focus:border-brand md:max-w-[400px] md:text-[14px]"
                 />
                 <Button type="submit" variant="primary" size="lg">
                   {copy.waitlist.cta}

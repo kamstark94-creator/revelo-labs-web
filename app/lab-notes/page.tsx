@@ -8,10 +8,10 @@ export default function LabNotesPage() {
   return (
     <>
       <Nav />
-      <main id="main" className="py-[64px] md:py-[120px]">
+      <main id="main" className="py-[48px] md:py-[96px]">
         <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
           <SectionDivider label="LAB NOTES" />
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:mt-12 md:grid-cols-3">
             {labNotes.map((note) => (
               <LabNoteCard key={note.slug} note={note} />
             ))}

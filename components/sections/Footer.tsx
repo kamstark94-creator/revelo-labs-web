@@ -5,15 +5,15 @@ import { copy } from "@/content/copy";
 
 export function Footer() {
   return (
-    <footer className="border-t border-hairline">
+    <footer className="bg-bg/70 border-t border-hairline">
       <MotionReveal
         mode="view"
         once
         viewportMargin="-50px"
-        className="mx-auto max-w-[1280px] px-6 py-16 md:px-12 lg:px-16"
+        className="mx-auto max-w-[1280px] px-6 py-12 md:px-12 md:py-16 lg:px-16"
       >
         <MotionRevealItem>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
+          <div className="bg-surface/60 grid grid-cols-1 gap-10 rounded-[8px] border border-hairline p-5 shadow-[inset_0_1px_0_rgba(244,242,238,0.04)] md:grid-cols-2 md:p-7 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
             <div className="md:col-span-2 lg:col-span-1">
               <Link
                 href="/"
@@ -50,7 +50,7 @@ export function Footer() {
         </MotionRevealItem>
 
         <MotionRevealItem>
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-hairline pt-8 text-center md:flex-row md:items-center md:text-left">
+          <div className="bg-surface/35 mt-6 flex flex-col items-center justify-between gap-4 rounded-[8px] border border-hairline px-5 py-4 text-center md:flex-row md:items-center md:text-left">
             <p className="font-mono text-[12px] uppercase tracking-[0.05em] text-muted">
               {copy.footer.copyright}
             </p>

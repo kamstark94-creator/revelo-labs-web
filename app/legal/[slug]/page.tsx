@@ -31,13 +31,14 @@ export default function LegalPage({ params }: LegalPageProps) {
   return (
     <>
       <Nav />
-      <main id="main" className="py-[64px] md:py-[120px]">
-        <div className="mx-auto max-w-[680px] px-6 md:px-0">
+      <main id="main" className="px-3 py-[48px] md:px-6 md:py-[96px]">
+        <div className="bg-surface/55 mx-auto max-w-[760px] rounded-[8px] border border-hairline px-5 py-8 shadow-[inset_0_1px_0_rgba(244,242,238,0.04)] md:px-10 md:py-12">
           <h1 className="font-display text-[56px] uppercase leading-[0.95] tracking-[0.02em] text-ink md:text-[80px]">
             {legalPages[params.slug]}
           </h1>
           <p className="mt-8 text-[18px] leading-[1.7] text-body">
-            This policy is in development. Email hello@revelolabs.com for questions about {topic}.
+            This policy is in development. Email hello@revelolabs.com for
+            questions about {topic}.
           </p>
         </div>
       </main>

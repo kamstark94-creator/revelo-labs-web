@@ -14,7 +14,7 @@ export const copy = {
   hero: {
     kicker: experiment.fullLabel,
     headline: "ENGINEERED TO STAND OUT.",
-    sub: "We don't release products. We release experiments. Experiment 001 is the first garment out of the lab — documented, iterated, and worn.",
+    sub: "We don't release products. We release experiments. Experiment 001 is a matte nylon jogger built through deconstruction, panel mapping, and field testing.",
     ctaPrimary: { label: "ENTER THE LAB", href: "/experiments/001" },
     ctaSecondary: { label: "READ THE SPEC SHEET", href: "#spec" },
     marquee:
@@ -26,17 +26,17 @@ export const copy = {
       {
         kicker: "01 / METHOD",
         headline: "THE PROCESS\nIS THE PRODUCT",
-        body: "Concept. Pattern. Test. Refine. Release. Improve. Every garment is documented. Every iteration is public.",
+        body: "Concept. Deconstruct. Pattern. Test. Refine. Every garment is documented before it earns a release window.",
       },
       {
         kicker: "02 / MATERIAL",
         headline: "NOTHING ADDED\nWITHOUT FUNCTION",
-        body: "100% nylon shell. Bonded panels. Engineered for movement, not static photography.",
+        body: "Matte nylon shell, engineered panel construction, concealed zippers, and hardware that stays quiet in motion.",
       },
       {
         kicker: "03 / MOTION",
         headline: "COLOR FOLLOWS\nCONSTRUCTION",
-        body: "Panels follow the body. Color follows the panels. Nothing is decorative.",
+        body: "The angled thigh pocket, piping, and contrast panels trace stress points instead of decorating the silhouette.",
       },
     ],
   },

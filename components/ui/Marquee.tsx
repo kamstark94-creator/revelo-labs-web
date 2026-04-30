@@ -25,7 +25,7 @@ export function Marquee({ text, speed = 30 }: MarqueeProps) {
   ));
 
   return (
-    <div className="w-screen overflow-hidden border-t border-hairline py-4 font-mono text-[13px] uppercase leading-[1.4] tracking-[0.05em] text-brand">
+    <div className="bg-surface/35 w-screen overflow-hidden border-y border-hairline py-4 font-mono text-[12px] uppercase leading-[1.4] tracking-[0.05em] text-muted md:text-[13px]">
       {motionEnabled ? (
         <motion.div
           className="flex w-max whitespace-nowrap"
